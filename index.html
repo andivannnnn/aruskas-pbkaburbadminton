@@ -378,6 +378,36 @@ pbName:'PB. KABUR BADMINTON',pbKepanjangan:'',pbSlogan:''},
 tab:"dashboard", ready:false, riwayatFilter:{bulan:"",kategori:""}, sesiForm:null,
 settingsAt:0, syncAt:0, syncing:false, syncMsg:'', galeriIdx:0, hlIdx:0, spotIdx:0, wkIdx:0, siklusDraft:null };
 const AUTO_TIMERS={};
+/* ===== TOMBSTONE: biar yang dihapus tidak hidup lagi saat sinkron ===== */
+const TOMB_KEYS=['siklus','sesi','transactions','galeri'];
+let SHADOW={};
+function idsOf(k){ return new Set((Array.isArray(STATE[k])?STATE[k]:[]).map(x=>x&&x.id).filter(Boolean)); }
+function refreshShadow(){ TOMB_KEYS.forEach(k=>SHADOW[k]=idsOf(k)); }
+function detectRemoved(k){
+if(TOMB_KEYS.indexOf(k)<0) return;
+const now=idsOf(k);
+if(SHADOW[k]){
+const removed=[];
+SHADOW[k].forEach(id=>{ if(!now.has(id)) removed.push(id); });
+if(removed.length){
+if(!STATE.tomb) STATE.tomb={};
+if(!STATE.tomb[k]) STATE.tomb[k]={};
+removed.forEach(id=>{ STATE.tomb[k][id]=Date.now(); });
+}
+}
+SHADOW[k]=now;
+}
+function mergeTomb(a,b){
+const out={};
+const add=src=>{ if(!src) return; Object.keys(src).forEach(k=>{ out[k]=out[k]||{}; Object.keys(src[k]).forEach(id=>{ const t=Number(src[k][id])||0; if(!(out[k][id]>t)) out[k][id]=t; }); }); };
+add(a); add(b); return out;
+}
+function pruneTomb(tomb){
+const cut=Date.now()-1000*60*60*24*60;
+Object.keys(tomb||{}).forEach(k=>Object.keys(tomb[k]||{}).forEach(id=>{ if(Number(tomb[k][id])<cut) delete tomb[k][id]; }));
+return tomb||{};
+}
+function applyTomb(list,k,tomb){ const tb=(tomb&&tomb[k])||{}; return (list||[]).filter(x=>!tb[x.id]); }
 /* =================== Penyimpanan =================== */
 const KEYS=['pool','siklus','sesi','transactions','galeri','settings','tomb'];
 async function loadAll(){
