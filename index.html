@@ -15,40 +15,45 @@
 <meta property="og:title" content="PB. KABUR BADMINTON — Kas"/>
 <meta property="og:description" content="Aplikasi kas &amp; keanggotaan PB. Kabur Badminton."/>
 <meta property="og:image" content="https://aruskas-pbkaburbadminton.vercel.app/og-banner.jpg"/>
-<meta property="og:image:type" content="image/jpeg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <title>PB. KABUR BADMINTON — Kas</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-:root{--bg:#0B0B0D;--surface:#16161B;--sunk:#101014;--line:rgba(255,255,255,.08);--ink:#F5F2EA;--ink-2:#C7C2B8;--muted:#8F8A80;--gold:#C9A24B;--gold-2:#E8C36E;--gold-ink:#E8C36E;--gold-bg:rgba(201,162,75,.14);--net:#3ECF8E;--net-ink:#7EE2B8;--net-bg:rgba(62,207,142,.14);--miss:#FF6B6B;--miss-ink:#FFA3A3;--miss-bg:rgba(255,107,107,.14);--violet:#A78BFA;--silver:#C9CDD3;--sh-1:0 1px 2px rgba(0,0,0,.5),0 10px 26px -14px rgba(0,0,0,.6);--sh-2:0 18px 40px -16px rgba(0,0,0,.7);--r-card:18px;--r-field:12px;--font-ui:'Plus Jakarta Sans',system-ui,sans-serif;--font-dp:'Space Grotesk',system-ui,sans-serif;color-scheme:dark}
+:root{
+--bg:#0B0B0D;--surface:#16161B;--sunk:#101014;--line:rgba(255,255,255,.08);
+--ink:#F5F2EA;--ink-2:#C7C2B8;--muted:#8F8A80;
+--gold:#C9A24B;--gold-2:#E8C36E;--gold-ink:#E8C36E;--gold-bg:rgba(201,162,75,.14);
+--net:#3ECF8E;--net-ink:#7EE2B8;--net-bg:rgba(62,207,142,.14);
+--miss:#FF6B6B;--miss-ink:#FFA3A3;--miss-bg:rgba(255,107,107,.14);
+--violet:#A78BFA;--silver:#C9CDD3;
+--sh-1:0 1px 2px rgba(0,0,0,.5),0 10px 26px -14px rgba(0,0,0,.6);
+--r-card:18px;--r-field:12px;
+--font-ui:'Plus Jakarta Sans',system-ui,sans-serif;
+--font-dp:'Space Grotesk',system-ui,sans-serif;
+color-scheme:dark;
+}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--font-ui);-webkit-font-smoothing:antialiased}
 body{background:radial-gradient(90% 55% at 50% -10%,rgba(201,162,75,.08),transparent 60%) var(--bg);background-attachment:fixed}
 #root{max-width:480px;margin:0 auto;min-height:100vh;padding:0 0 112px}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input,select,textarea{font-family:inherit;color:inherit}
-img{max-width:100%}
 .num{font-family:var(--font-dp);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 .hide{display:none!important}
 .up{color:var(--net-ink)}.down{color:var(--miss-ink)}
 .tiny{font-size:10.5px;color:var(--muted);line-height:1.55;font-weight:500}
 :focus-visible{outline:2px solid rgba(201,162,75,.6);outline-offset:2px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px 12px;position:sticky;top:0;z-index:30;background:rgba(11,11,13,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;min-width:0}
 .logo{width:38px;height:38px;border-radius:10px;object-fit:cover;border:1px solid rgba(201,162,75,.45);flex:none}
-.app{font-family:var(--font-dp);font-size:14.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app{font-family:var(--font-dp);font-size:14.5px;font-weight:700;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .today{font-size:10.5px;color:var(--muted);margin-top:1px;font-weight:600}
 .cyclechip{flex:none;background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#191204;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:800;box-shadow:0 4px 14px rgba(201,162,75,.25);font-variant-numeric:tabular-nums}
 .view{padding:0 16px}
-.navbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(10px + env(safe-area-inset-bottom));width:calc(100% - 24px);max-width:456px;background:rgba(14,14,16,.92);backdrop-filter:blur(14px);border-radius:999px;display:flex;padding:4px;box-shadow:var(--sh-2);z-index:40;border:1px solid #2A2924}
+.navbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(10px + env(safe-area-inset-bottom));width:calc(100% - 24px);max-width:456px;background:rgba(14,14,16,.92);backdrop-filter:blur(14px);border-radius:999px;display:flex;padding:4px;box-shadow:0 18px 40px -16px rgba(0,0,0,.7);z-index:40;border:1px solid #2A2924}
 .navbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0 6px;border-radius:999px;color:rgba(255,255,255,.5);font-size:8.6px;font-weight:700;transition:.18s}
 .navbar button.active{background:rgba(201,162,75,.22);color:var(--gold-2)}
 .navbar svg{width:17px;height:17px;stroke-width:2}
-.loading{display:flex;align-items:center;justify-content:center;height:70vh;color:var(--muted);font-size:13px}
-.empty{text-align:center;padding:34px 12px;color:var(--muted);font-size:13px;font-weight:500;line-height:1.6}
 .hero{background:linear-gradient(180deg,#1A1A20,#141419);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--sh-1);margin:14px 0;position:relative;overflow:hidden}
 .courtlines{position:absolute;inset:0;width:100%;height:100%;opacity:.6;pointer-events:none}
 .toprow{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1}
@@ -63,7 +68,6 @@ img{max-width:100%}
 .rs{font-size:10.5px;color:var(--muted);font-weight:600}
 .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -16px;padding:2px 16px 6px;scroll-behavior:smooth}
 .rail::-webkit-scrollbar{display:none}
-.rail>*{flex:0 0 auto;scroll-snap-align:start}
 .dots-mini{display:flex;gap:5px;justify-content:center;margin:8px 0 4px}
 .dots-mini i{width:5px;height:5px;border-radius:999px;background:#2A2A30;display:block;transition:.25s}
 .dots-mini i.on{width:16px;background:var(--gold)}
@@ -73,7 +77,7 @@ img{max-width:100%}
 .spot-ig-bg{position:absolute;inset:0;background:linear-gradient(135deg,#f9ce34,#ee2a7b 55%,#6228d7);display:flex;align-items:center;justify-content:center}
 .spot-ig-bg svg{width:56px;height:56px;color:rgba(255,255,255,.92)}
 .spot-body{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;padding:44px 16px 15px}
-.spot-tag{position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:var(--gold-2);font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;padding:5px 10px 5px 8px;border-radius:999px}
+.spot-tag{position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);color:var(--gold-2);font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;padding:5px 10px 5px 8px;border-radius:999px}
 .spot-tag svg{width:11px;height:11px;flex:none}
 .spot-body>.spot-tag{position:static;align-self:flex-start;margin:0 0 8px}
 .spot-title{font-size:15px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
@@ -144,7 +148,6 @@ img{max-width:100%}
 .il{font-size:9.5px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
 .iv{font-size:12.5px;font-weight:700;margin-top:4px}
 .slabel{font-size:10.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;margin:20px 2px 9px}
-.slabel:first-child{margin-top:4px}
 .gslide{flex:0 0 100%;scroll-snap-align:center;position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--sunk)}
 .gslide img{width:100%;height:100%;object-fit:cover;display:block}
 .gcap{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 12px;background:linear-gradient(to top,rgba(0,0,0,.8),transparent);font-size:11.5px;font-weight:700}
@@ -237,6 +240,8 @@ details summary::-webkit-details-marker{display:none}
 pre#sql-box{background:var(--sunk);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:10px;line-height:1.5;overflow-x:auto;white-space:pre}
 .toast{position:fixed;left:50%;transform:translateX(-50%) translateY(14px);bottom:calc(94px + env(safe-area-inset-bottom));background:var(--gold);color:#191204;padding:11px 18px;border-radius:999px;font-size:12.5px;font-weight:800;z-index:60;opacity:0;transition:.22s;pointer-events:none;max-width:calc(100% - 40px);text-align:center}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.loading{display:flex;align-items:center;justify-content:center;height:70vh;color:var(--muted);font-size:13px}
+.empty{text-align:center;padding:34px 12px;color:var(--muted);font-size:13px;font-weight:500;line-height:1.6}
 .wk-slide{max-height:300px;overflow-y:auto}
 #floating-importer{position:fixed;z-index:999999;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#FFD700 0%,#D4AF37 100%);box-shadow:0 4px 15px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:26px;color:#111;user-select:none;touch-action:none;cursor:grab;right:16px;bottom:calc(84px + env(safe-area-inset-bottom))}
 </style>
@@ -539,7 +544,7 @@ rail.addEventListener('pointerdown',pause);
 rail.addEventListener('pointerup',resume);
 rail.addEventListener('scroll',()=>{ const i=Math.round(rail.scrollLeft/step()); if(i!==idx){ idx=((i%count)+count)%count; STATE[stateKey]=idx; dots.forEach((d,j)=>d.classList.toggle('on',j===idx)); } },{passive:true});
 }
-/* =================== Sorotan / Spotlight slideshow =================== */
+/* =================== Sorotan / Spotlight slideshow (beranda atas) =================== */
 const KOMPOSISI_COLORS={'Sewa Lapangan':'var(--gold)','Shuttlecock':'var(--violet)','Lainnya (Pengeluaran)':'var(--miss)'};
 function seededIdx(salt,n){ if(!n) return 0; const s=todayStr()+'|'+salt; let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0; return h%n; }
 function transaksiPeriodeAktif(){
@@ -608,10 +613,11 @@ ${sor.topPartial?`<div class="spot-stat-row"><span>Partial paling rajin</span><b
 </div>
 </div>
 </div>`;
-const pList=sesiUrut().filter(se=>{const sk=activeSiklus();return !sk||se.siklusId===sk.id;}).slice(-6);
+const pSk=activeSiklus();
+const pSesi=sesiUrut().filter(se=>!pSk||se.siklusId===pSk.id).slice(-6);
 let slidePartial='';
-if(pList.length){
-const pd=pList.map(se=>({d:se.tanggal,n:se.partial.filter(p=>(p.nama||'').trim()).length,t:se.partial.reduce((s,p)=>s+Number(p.jumlah||0),0)}));
+if(pSesi.length){
+const pd=pSesi.map(se=>({d:se.tanggal,n:se.partial.filter(p=>(p.nama||'').trim()).length,t:se.partial.reduce((s,p)=>s+Number(p.jumlah||0),0)}));
 const maxN=Math.max(...pd.map(x=>x.n),1);
 const totN=pd.reduce((s,x)=>s+x.n,0);
 const totT=pd.reduce((s,x)=>s+x.t,0);
@@ -619,7 +625,7 @@ slidePartial=`<div class="spot-slide">
 <div class="spot-body">
 <span class="spot-tag">${ICON_CHART}Grafik partial periode ini</span>
 <div class="spot-title">${totN} kehadiran partial</div>
-<div class="spot-sub">${esc(activeSiklus()?activeSiklus().label:'Semua periode')} · iuran ${fmtRp(totT)}</div>
+<div class="spot-sub">${esc(pSk?pSk.label:'Semua periode')} · iuran ${fmtRp(totT)}</div>
 <div class="pchart">${pd.map(x=>`<div class="pcol"><i style="height:${Math.max(8,Math.round(x.n/maxN*100))}%"></i><b>${x.n}</b><span>${dLabel(x.d)}</span></div>`).join('')}</div>
 </div>
 </div>`;
@@ -662,183 +668,7 @@ const slideTt=tt?`<div class="spot-slide">
 </div>`:'';
 return [slideKomposisi,slideSorotan,slidePartial,slideFoto,slideYt,slideIg,slideTt].filter(Boolean).join('');
 }
-/* =================== Home =================== */
-function renderHome(today){
-const urut=sesiUrut();
-const kas=saldoTotal();
-const avgKeluar = urut.length? urut.reduce((s,se)=>s+sesiTotalsRutin(se.id).keluar,0)/urut.length : 0;
-const status=statusKas(kas,avgKeluar);
-const statusTxt={AMAN:'Aman',KETAT:'Ketat',DEFISIT:'Defisit'}[status];
-const last=urut[urut.length-1];
-const arusTerakhir= last? sesiTotals(last.id) : {masuk:0,keluar:0,net:0};
-const win=urut.slice(-8);
-const maxVal=Math.max(...win.map(se=>{ const t=sesiTotals(se.id); return Math.max(t.masuk,t.keluar); }),1);
-const winTotalMasuk=win.reduce((s,se)=>s+sesiTotals(se.id).masuk,0);
-const winTotalKeluar=win.reduce((s,se)=>s+sesiTotals(se.id).keluar,0);
-const combars = win.length ? `
-<div class="kastot">
-<div class="kt"><div class="kl">Total pemasukan</div><div class="kv num up">${fmtRp(winTotalMasuk)}</div></div>
-<div class="kt"><div class="kl">Total pengeluaran</div><div class="kv num down">${fmtRp(winTotalKeluar)}</div></div>
-</div>
-<div class="combars">${win.map(se=>{ const t=sesiTotals(se.id);
-const hin=Math.max(3,Math.round(t.masuk/maxVal*100)), hout=Math.max(3,Math.round(t.keluar/maxVal*100));
-return `<div class="col"><div class="grp"><i class="in" style="height:${hin}%"></i><i class="out" style="height:${hout}%"></i></div>
-<div class="colval"><b class="up">${fmtRingkas(t.masuk)}</b><b class="down">${fmtRingkas(t.keluar)}</b></div></div>`;
-}).join('')}</div>
-<div class="axis" style="margin-top:2px;"><span>${dLabel(win[0].tanggal)}</span><span>${dLabel(win[win.length-1].tanggal)}</span></div>
-<div class="legend-mini"><span><i style="background:var(--net)"></i>Pemasukan</span><span><i style="background:var(--miss);opacity:.7"></i>Pengeluaran</span></div>`
-: `<div class="empty" style="padding:20px 0;">Belum ada sesi tercatat.</div>`;
-const skAktif=siklusUrut().slice(-1)[0];
-const totalPeriode=totalPeriodeAktif();
-const totalPeriodeCard=skAktif?`<div class="card" style="border:1.5px solid var(--net);">
-<h3>Total kas ${esc(skAktif.label)}</h3>
-<div class="csub">Semua transaksi sejak siklus ini dimulai — termasuk pelunasan member full &amp; sewa lapangan member. Untuk total semua siklus (all-time), buka tab Riwayat.</div>
-<div class="duo" style="margin-top:2px;">
-<div class="tile"><div class="l">Total pemasukan</div><div class="v num up">${fmtRp(totalPeriode.masuk)}</div></div>
-<div class="tile"><div class="l">Total pengeluaran</div><div class="v num down">${fmtRp(totalPeriode.keluar)}</div></div>
-</div>
-</div>`:'';
-let iuranCard='';
-if(skAktif){
-const info=siklusLunasInfo(skAktif);
-const belum=skAktif.full.filter(f=>!f.lunas);
-iuranCard=`<div class="card">
-<h3>${esc(skAktif.label)}</h3>
-<div class="csub">Total uang bergerak dari iuran full anggota</div>
-<div class="duo" style="margin-top:2px;">
-<div class="tile"><div class="l">Terkumpul</div><div class="v num up">${fmtRp(info.terkumpul)}</div></div>
-<div class="tile"><div class="l">Potensi total</div><div class="v num">${fmtRp(info.potensi)}</div></div>
-</div>
-<div class="tiny">${info.lunas} dari ${info.total} anggota sudah bayar.</div>
-${belum.length? `<div class="namechip" style="margin-top:10px;">${belum.map(m=>`<span class="nc full"><i></i>${esc(m.nama||'(kosong)')}</span>`).join('')}</div>`
-: `<div class="tiny" style="margin-top:8px;">Semua anggota full siklus ini sudah lunas.</div>`}
-</div>`;
-}
-let hadirCard='';
-if(last){
-const partials=last.partial.map(p=>p.nama);
-const partialSet=new Set(partials);
-const fulls=last.hadirFull.map(h=>h.nama).filter(nm=>!partialSet.has(nm));
-hadirCard=`<div class="card">
-<h3>Kehadiran sesi terakhir</h3>
-<div class="csub">${dLabelFull(last.tanggal)} · ${fulls.length+partials.length} orang hadir</div>
-${(fulls.length||partials.length)?`<div class="attend-cols">
-<div class="attend-col">
-<div class="attend-chead">Full · ${fulls.length}</div>
-${fulls.length?fulls.map(nm=>`<div class="attend-r"><span class="nm">${esc(nm)}</span><span class="badge full">Full</span></div>`).join(''):`<div class="tiny">Tidak ada.</div>`}
-</div>
-<div class="attend-col">
-<div class="attend-chead">Partial · ${partials.length}</div>
-${partials.length?partials.map(nm=>`<div class="attend-r"><span class="nm">${esc(nm)}</span><span class="badge partial">Partial</span></div>`).join(''):`<div class="tiny">Tidak ada.</div>`}
-</div>
-</div>`:`<div class="empty">Belum ada yang tercatat hadir.</div>`}
-</div>`;
-}
-const skAktif2=(last&&last.siklusId&&STATE.siklus.find(s=>s.id===last.siklusId))||activeSiklus();
-const memberCourts=skAktif2?(skAktif2.lapanganMember||[]):[];
-const lokasiAktif=(skAktif2&&skAktif2.lokasi)||(last&&last.lokasi)||STATE.settings.lokasi;
-const extraCourts=last?courtBookingsOf(last).filter(b=>b.jenisLapangan!=='Member'):[];
-let lapCard='';
-if(memberCourts.length||extraCourts.length||last){
-lapCard=`<div class="card">
-<h3>Lapangan sesi terakhir</h3>
-<div class="csub">${esc(lokasiAktif||'Lokasi belum diatur')}</div>
-${memberCourts.length?`<div class="slabel" style="margin:0 0 8px;">Lapangan member (siklus berjalan)</div>
-<div class="info-grid">${memberCourts.map(c=>{ const dur=durasiJamText(c.jam);
-return `<div class="info-item"><div class="il">${esc(c.noLapangan||'Lapangan')}</div><div class="iv">${esc(c.jam||'jam belum diisi')}${dur?` · ${dur}`:''}</div><div class="tiny" style="margin-top:3px;">Member</div></div>`; }).join('')}</div>`:''}
-${extraCourts.length?`<div class="slabel" style="margin:${memberCourts.length?14:0}px 0 8px;">Lapangan tambahan sesi ini</div>
-<div class="info-grid">${extraCourts.map(b=>{ const dur=durasiJamText(b.jam);
-return `<div class="info-item"><div class="il">${esc(b.noLapangan||'Lapangan')}</div><div class="iv">${esc(b.jam||'-')}${dur?` · ${dur}`:''}</div><div class="tiny" style="margin-top:3px;">${esc(b.jenisLapangan||'Non-Member')}</div></div>`; }).join('')}</div>`:''}
-${!memberCourts.length&&!extraCourts.length?`<div class="tiny">Belum ada rincian lapangan. Atur lapangan member di tab Anggota.</div>`:''}
-<div class="tiny" style="margin-top:10px;">Lapangan member berlaku selama siklus ini dan tetap tampil di sini sampai siklus baru dimulai — atur di tab Anggota.</div>
-</div>`;
-}
-const partialWin=win.slice(-6).map(se=>{
-const total=se.partial.reduce((s,p)=>s+Number(p.jumlah||0),0);
-return {tanggal:se.tanggal,orang:se.partial.length,total};
-});
-const partialCard=partialWin.length?`<div class="card">
-<h3>Pemasukan member partial per minggu</h3>
-<div class="csub">Total iuran dari member partial saja, per sesi</div>
-${partialWin.map(x=>`<div class="line"><span class="k">${dLabel(x.tanggal)} · ${x.orang} orang</span><span class="v num up">${fmtRp(x.total)}</span></div>`).join('')}
-</div>`:'';
-const galeri=[...STATE.galeri].sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
-const skSpot=activeSiklus();
-const hasPartialSlide=sesiUrut().some(se=>!skSpot||se.siklusId===skSpot.id);
-const spotCount=3+(hasPartialSlide?1:0)+(HIGHLIGHTS.some(h=>h.platform==='yt')?1:0)+(HIGHLIGHTS.some(h=>h.platform==='ig')?1:0)+(HIGHLIGHTS.some(h=>h.platform==='tt')?1:0);
-return `
-<section class="hero">
-${COURT_SVG}
-<div class="toprow">
-<div>
-<div class="eyebrow">Kas ${esc(STATE.settings.pbName)}${last?' · per '+dLabel(last.tanggal):''}</div>
-<div class="big num">${fmtRp(kas)}</div>
-</div>
-<span class="pill ${status}">${statusTxt}</span>
-</div>
-</section>
-<div class="railhead"><span class="rt">Sorotan</span><span class="rs">geser untuk lihat semua</span></div>
-<div class="rail" id="spot-rail">${renderSpotlightSlides()}</div>
-<div class="dots-mini" id="spot-dots">${Array.from({length:spotCount},(_,i)=>`<i class="${i===0?'on':''}"></i>`).join('')}</div>
-<div class="card" style="margin-top:14px;border:1.5px solid var(--gold,#C9A24B);">
-<h3>Dukung PB Kabur Badminton! 🏸</h3>
-<div class="csub">Follow sosial media resmi klub — biar nggak ketinggalan kabar, foto, dan momen seru tiap sesi.</div>
-<div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
-<a href="https://www.instagram.com/pbkaburbadminton/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#f9ce34,#ee2a7b 55%,#6228d7);">
-<span style="width:36px;height:36px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.18);border-radius:10px;">${ICON_IG}</span>
-<span style="flex:1;line-height:1.25;"><b style="display:block;">Instagram klub</b><small style="opacity:.9;">@pbkaburbadminton</small></span>
-<span style="flex:none;background:#fff;color:#c13584;font-weight:800;font-size:12px;padding:6px 11px;border-radius:999px;">+ Follow</span>
-</a>
-<a href="https://www.tiktok.com/@pbkaburbadminton" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#0f0f0f,#122a2c 55%,#2b1420);border:1px solid rgba(37,244,238,.35);">
-<span style="width:36px;height:36px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border-radius:10px;">${ICON_TT}</span>
-<span style="flex:1;line-height:1.25;"><b style="display:block;">TikTok klub</b><small style="opacity:.85;">@pbkaburbadminton</small></span>
-<span style="flex:none;background:#25f4ee;color:#0f0f0f;font-weight:800;font-size:12px;padding:6px 11px;border-radius:999px;">+ Follow</span>
-</a>
-</div>
-<div class="tiny" style="margin-top:10px;">Satu follow kamu = semangat buat klub kita! Ajak teman-temanmu juga ya 💛</div>
-</div>
-${totalPeriodeCard}
-<div class="duo">
-<div class="tile"><div class="l">Kas masuk (sesi terakhir)</div><div class="v num up">${fmtRp(arusTerakhir.masuk)}</div></div>
-<div class="tile"><div class="l">Kas keluar (sesi terakhir)</div><div class="v num down">${fmtRp(arusTerakhir.keluar)}</div></div>
-</div>
-<div class="card">
-<h3>Pergerakan kas</h3>
-<div class="csub">Pemasukan vs pengeluaran per sesi (${win.length} sesi terakhir) — termasuk iuran full &amp; sewa lapangan member, tercatat di sesi pertama siklus</div>
-${combars}
-</div>
-${hadirCard}
-${lapCard}
-${iuranCard}
-${partialCard}
-<div class="railhead"><span class="rt">Galeri</span><span class="rs">${galeri.length} foto</span></div>
-<div class="rail" id="galeri-rail">
-<div class="upload-tile" id="btn-upload-foto">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-Unggah foto pertama
-</div>
-${galeri.map(g=>`<div class="gslide">
-<img src="${g.dataUrl}" alt="${esc(g.caption||'foto')}"/>
-<div class="gcap">${esc(g.caption||dLabel(g.tanggal||todayStr()))}</div>
-<button type="button" class="gdel" data-del-foto="${g.id}">✕</button>
-</div>`).join('')}
-</div>
-${galeri.length>1?`<div class="dots-mini" id="galeri-dots">${galeri.map((_,i)=>`<i class="${i===0?'on':''}"></i>`).join('')}</div>`:''}
-<input type="file" id="file-foto" accept="image/*" multiple style="position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;"/>
-<div class="tiny" style="margin:4px 4px 16px;">Foto dikompres otomatis. Maksimal 12 foto tersimpan.</div>
-<div class="slabel">Highlight seputar badminton</div>
-${['YouTube','Instagram','TikTok'].map(g=>`<div class="hlgroup"><div class="hgt">${g}</div>
-<div class="card">${HIGHLIGHTS.filter(h=>h.group===g).map(h=>{ const ic=h.platform==='yt'?ICON_YT:(h.platform==='tt'?ICON_TT:ICON_IG);
-return `<a class="hl-card" href="${h.url}" target="_blank" rel="noopener">
-<span class="hl-thumb ${h.platform}">
-<span class="fallback-ic">${ic}</span>
-<img src="${h.thumb}" alt="" loading="lazy" onerror="this.style.display='none'"/>
-<img class="badge" src="${LOGO_URI}" alt=""/>
-<span class="plat ${h.platform}">${ic}</span></span>
-<span><div class="hl-t">${esc(h.title)}</div><div class="hl-d">${esc(h.desc)}</div></span>
-<span class="hl-go">↗</span>
-</a>`;}).join('')}</div></div>`).join('')}`;
-}
+//=====BAGIAN1-SELESAI=====
 /* =================== Sesi (input) =================== */
 function newSesiForm(){
 const sk=activeSiklus();
@@ -933,7 +763,7 @@ ${b.kategori==='Sewa Lapangan'?`<div class="sub-fields">
 <button class="btn btn-gold" id="btn-simpan-sesi" style="margin-top:2px;">Simpan sesi</button>
 ${renderCalcTambahan()}`;
 }
-/* =================== Kalkulator jadwal tambahan =================== */
+/* =================== Kalkulator jadwal tambahan (di luar Sabtu) =================== */
 function renderCalcTambahan(){
 if(!STATE.calcTambahan) STATE.calcTambahan=newCalcTambahan();
 const c=STATE.calcTambahan;
@@ -1003,7 +833,7 @@ ${list.length===0?`<div class="empty">Tidak ada transaksi pada filter ini.</div>
 </div></div>`).join('')}
 </div>`;
 }
-/* =================== Anggota =================== */
+/* =================== Anggota (pool + siklus) =================== */
 function renderAnggotaTotalTable(){
 const skAktif=activeSiklus();
 const fulls=(skAktif?skAktif.full:[]).filter(f=>(f.nama||'').trim())
@@ -1029,7 +859,7 @@ ${fulls.length?fulls.map(nm=>`<div class="attend-r"><span class="nm">${esc(nm)}<
 ${partials.length?partials.map(nm=>`<div class="attend-r"><span class="nm">${esc(nm)}</span><span class="badge partial">Partial</span></div>`).join(''):`<div class="tiny">Belum ada.</div>`}
 </div>
 </div>`:`<div class="empty">Belum ada anggota tercatat.</div>`}
-<div class="tiny" style="margin-top:12px;">Full = roster siklus berjalan. Partial = gabungan nama yang pernah hadir per sesi. Otomatis mengikuti siklus begitu siklus baru dimulai.</div>
+<div class="tiny" style="margin-top:12px;">Full = roster siklus berjalan (tetap tercatat walau tidak selalu hadir, karena sudah kontribusi lapangan member). Partial = gabungan nama yang pernah hadir per sesi. Otomatis mengikuti siklus begitu siklus baru dimulai — riwayat siklus lama tetap tersimpan di bagian "Siklus keanggotaan" di bawah.</div>
 </div>`;
 }
 function renderPartialMingguan(){
@@ -1081,7 +911,7 @@ return `<div class="siklus-card" data-sk="${s.id}">
 </div>
 </div>`).join(''):`<div class="tiny">Belum ada lapangan member untuk siklus ini.</div>`}</div>
 <button type="button" class="btn btn-ghost btn-sm" data-lm-add="${s.id}" style="margin-top:2px;">+ Tambah lapangan member</button>
-<div class="tiny" style="margin:8px 0 2px;">Lapangan yang sudah dikonfirmasi dianggap sudah dibayar &amp; terkunci untuk siklus ini. Tombol ✕ hanya untuk membetulkan salah input, dan akan meminta konfirmasi dulu sebelum menghapus (transaksi terkait ikut terhapus).</div>
+<div class="tiny" style="margin:8px 0 2px;">Lapangan yang sudah dikonfirmasi dianggap sudah dibayar &amp; terkunci untuk siklus ini — biasanya hanya bisa ditambah, bukan dikurangi. Tombol ✕ hanya untuk membetulkan salah input, dan akan meminta konfirmasi dulu sebelum menghapus (transaksi terkait ikut terhapus).</div>
 <div class="slabel" style="margin:16px 2px 8px;">Roster anggota full</div>
 <div class="sk-slots">${s.full.map(fm=>`<div class="slotrow" data-slot="${fm.id}">
 <input type="text" list="dl-pool" placeholder="Nama" data-slotnama="${fm.id}" value="${esc(fm.nama)}"/>
@@ -1107,4 +937,965 @@ ${STATE.pool.map(n=>`<span class="nc"><i style="background:var(--muted)"></i>${e
 </div>`;
 }
 function renderSiklusDraft(d){
-const statusLabel={full:'Lanjut Full',partial:'Jadi Partial',berhenti:'Tidak lanjut
+const statusLabel={full:'Lanjut Full',partial:'Jadi Partial',berhenti:'Tidak lanjut'};
+return `<div class="siklus-card" style="border:1px dashed var(--line,#ccc);">
+<div class="sh"><span class="st">Konfirmasi siklus baru</span></div>
+<div class="note info" style="margin-top:8px;">Cek satu per satu: anggota siklus lalu lanjut jadi full member lagi, turun jadi partial (bayar per sesi), atau berhenti. Anggota yang "Jadi Partial"/"Tidak lanjut" TIDAK dimasukkan ke roster full siklus baru.</div>
+<div class="field" style="margin-top:8px;"><label>Mulai siklus</label><input type="date" id="draft-mulai" value="${d.mulai}"/></div>
+<div class="slabel" style="margin:12px 2px 8px;">Anggota siklus sebelumnya</div>
+<div class="draft-rows">${d.entries.length?d.entries.map((e,i)=>`<div class="slotrow" data-draft-row="${i}" style="flex-wrap:wrap;">
+<span style="flex:1 1 100%;font-weight:700;">${esc(e.nama)}</span>
+<select data-draft-status="${i}" style="flex:1;">
+${['full','partial','berhenti'].map(v=>`<option value="${v}" ${e.status===v?'selected':''}>${statusLabel[v]}</option>`).join('')}
+</select>
+</div>`).join(''):`<div class="tiny">Belum ada anggota di siklus sebelumnya — semua anggota di bawah ini baru.</div>`}</div>
+<div class="field" style="margin-top:10px;"><label>+ Tambah anggota full baru (opsional, pisahkan dengan koma)</label><input type="text" id="draft-baru" placeholder="mis. Budi, Sari"/></div>
+<div style="display:flex;gap:8px;margin-top:12px;">
+<button class="btn btn-onyx" id="btn-siklus-draft-confirm">Konfirmasi &amp; buat siklus</button>
+<button class="btn btn-ghost" id="btn-siklus-draft-batal">Batal</button>
+</div>
+</div>`;
+}
+/* =================== Pengaturan (tab tersendiri) =================== */
+function renderPengaturan(){
+return `
+<div class="slabel">Identitas klub</div>
+<div class="card">
+<div class="field"><label>Nama PB</label><input id="s-pbName" type="text" value="${esc(STATE.settings.pbName)}"/></div>
+<div class="field"><label>Kepanjangan</label><input id="s-pbKepanjangan" type="text" value="${esc(STATE.settings.pbKepanjangan)}"/></div>
+<div class="field"><label>Slogan</label><input id="s-pbSlogan" type="text" value="${esc(STATE.settings.pbSlogan)}"/></div>
+</div>
+<div class="slabel">Tarif iuran</div>
+<div class="note">Pengaturan lapangan (lokasi &amp; lapangan member) kini dikelola per siklus di tab Anggota, karena lokasi dan lapangan yang dipakai bisa berbeda tiap siklus.</div>
+<div class="card">
+<div class="field"><label>Iuran per siklus — member full</label>${moneyField('id="s-iuranFull"',STATE.settings.iuranFull)}</div>
+<div class="field"><label>Iuran per sesi — member partial</label>${moneyField('id="s-tarifPartial"',STATE.settings.tarifPartial)}</div>
+<button class="btn btn-gold" id="btn-simpan-pengaturan" style="margin-top:2px;">Simpan pengaturan</button>
+</div>
+${renderSyncCard()}
+<div class="slabel">Data</div>
+<div class="card">
+<div class="csub">${MODE_MANDIRI
+? 'Data tersimpan di browser perangkat ini. Aktifkan sinkron online di atas, atau gunakan ekspor Excel sebagai cadangan.'
+: 'Transaksi dan pengaturan tersimpan bersama antar perangkat.'}</div>
+<button class="btn btn-onyx" id="btn-export">Unduh sebagai file Excel</button>
+<div class="tiny" style="margin-top:9px;margin-bottom:16px;">Berisi Pengaturan, Siklus Keanggotaan, Rekap Mingguan, dan satu sheet per sesi.</div>
+<label class="btn btn-ghost" for="file-import" id="btn-import-label" style="display:block;text-align:center;">Impor dari file Excel…</label>
+<input type="file" id="file-import" accept=".xlsx" style="position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;"/>
+<div class="tiny" style="margin-top:9px;margin-bottom:16px;">Mengganti seluruh data dengan isi file. Unduh cadangan dulu bila perlu.</div>
+<button class="btn btn-ghost" id="btn-reseed">Pulihkan data contoh (Juli 2026)</button>
+</div>`;
+}
+/* =================== Galeri: kompresi foto =================== */
+function compressImage(file){
+return new Promise((resolve,reject)=>{
+const reader=new FileReader();
+reader.onload=()=>{
+const img=new Image();
+img.onload=()=>{
+const maxW=900;
+const scale=Math.min(1,maxW/img.width);
+const w=Math.round(img.width*scale), h=Math.round(img.height*scale);
+const cv=document.createElement('canvas'); cv.width=w; cv.height=h;
+const ctx=cv.getContext('2d'); ctx.drawImage(img,0,0,w,h);
+resolve(cv.toDataURL('image/jpeg',0.65));
+};
+img.onerror=reject;
+img.src=reader.result;
+};
+reader.onerror=reject;
+reader.readAsDataURL(file);
+});
+}
+async function handleFotoFiles(files){
+for(const file of files){
+try{
+const dataUrl=await compressImage(file);
+STATE.galeri.push({id:'g-'+uid(),dataUrl,caption:'',tanggal:todayStr(),createdAt:Date.now()});
+}catch(e){ console.error(e); }
+}
+STATE.galeri.sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+if(STATE.galeri.length>12) STATE.galeri=STATE.galeri.slice(0,12);
+await saveKey('galeri'); render(); toast('Foto ditambahkan.');
+}
+/* =================== Handlers =================== */
+function attachTabHandlers(){
+if(STATE.tab==="dashboard"){
+attachAutoRail('#spot-rail','#spot-dots',root.querySelectorAll('#spot-rail .spot-slide').length,5000,'spotIdx');
+const galeriCount=STATE.galeri.length;
+if(galeriCount>1) attachAutoRail('#galeri-rail','#galeri-dots',galeriCount,4200,'galeriIdx');
+const up=root.querySelector('#btn-upload-foto'), fi=root.querySelector('#file-foto');
+if(up) up.addEventListener('click',()=>fi.click());
+if(fi) fi.addEventListener('change',async e=>{ const files=[...(e.target.files||[])]; e.target.value=''; if(files.length) await handleFotoFiles(files); });
+root.querySelectorAll('[data-del-foto]').forEach(b=>b.addEventListener('click',async(ev)=>{
+ev.preventDefault(); ev.stopPropagation();
+STATE.galeri=STATE.galeri.filter(g=>g.id!==b.dataset.delFoto);
+await saveKey('galeri'); render(); toast('Foto dihapus.');
+}));
+}
+if(STATE.tab==="sesi"){
+const f=STATE.sesiForm;
+root.querySelector('#sf-tanggal').addEventListener('change',e=>{ f.tanggal=e.target.value; });
+root.querySelector('#sf-lokasi').addEventListener('input',e=>{ f.lokasi=e.target.value; });
+root.querySelectorAll('[data-hfnama]').forEach(el=>el.addEventListener('change',()=>{ f.hadirFull[Number(el.dataset.hfnama)].nama=el.value; render(); }));
+root.querySelectorAll('[data-hfdel]').forEach(el=>el.addEventListener('click',()=>{ f.hadirFull.splice(Number(el.dataset.hfdel),1); render(); }));
+root.querySelector('#btn-hfull-add').addEventListener('click',()=>{ f.hadirFull.push({nama:''}); render(); });
+root.querySelectorAll('[data-pnama]').forEach(el=>el.addEventListener('input',()=>{ f.partial[Number(el.dataset.pnama)].nama=el.value; }));
+root.querySelectorAll('[data-pdel]').forEach(el=>el.addEventListener('click',()=>{ f.partial.splice(Number(el.dataset.pdel),1); render(); }));
+root.querySelector('#btn-partial-add').addEventListener('click',()=>{ f.partial.push({nama:'',jumlah:STATE.settings.tarifPartial}); render(); });
+root.querySelectorAll('[data-bkat]').forEach(el=>el.addEventListener('change',()=>{ f.biaya[Number(el.dataset.bkat)].kategori=el.value; render(); }));
+root.querySelectorAll('[data-bjenis]').forEach(el=>el.addEventListener('change',()=>{ f.biaya[Number(el.dataset.bjenis)].jenisLapangan=el.value; }));
+root.querySelectorAll('[data-bno]').forEach(el=>el.addEventListener('input',()=>{ f.biaya[Number(el.dataset.bno)].noLapangan=el.value; }));
+root.querySelectorAll('[data-bjam]').forEach(el=>el.addEventListener('input',()=>{ f.biaya[Number(el.dataset.bjam)].jam=el.value; }));
+root.querySelectorAll('[data-bket]').forEach(el=>el.addEventListener('input',()=>{ f.biaya[Number(el.dataset.bket)].keterangan=el.value; }));
+root.querySelectorAll('[data-bdel]').forEach(el=>el.addEventListener('click',()=>{ f.biaya.splice(Number(el.dataset.bdel),1); render(); }));
+root.querySelector('#btn-biaya-add').addEventListener('click',()=>{ f.biaya.push({kategori:'Sewa Lapangan',jenisLapangan:'Non-Member',noLapangan:'',jam:'',keterangan:'',jumlah:0}); render(); });
+root.querySelectorAll('[data-mket]').forEach(el=>el.addEventListener('input',()=>{ f.masukLain[Number(el.dataset.mket)].keterangan=el.value; }));
+root.querySelectorAll('[data-mdel]').forEach(el=>el.addEventListener('click',()=>{ f.masukLain.splice(Number(el.dataset.mdel),1); render(); }));
+root.querySelector('#btn-masuk-add').addEventListener('click',()=>{ f.masukLain.push({keterangan:'',jumlah:0}); render(); });
+root.querySelector('#btn-simpan-sesi').addEventListener('click',async()=>{
+const tanggal=f.tanggal||todayStr();
+const sesiId='sesi-'+uid();
+const hadirFull=f.hadirFull.filter(h=>h.nama.trim()).map(h=>({nama:h.nama.trim()}));
+const partial=f.partial.filter(p=>p.nama.trim()).map(p=>({nama:p.nama.trim(),jumlah:Number(p.jumlah)||STATE.settings.tarifPartial}));
+const biaya=f.biaya.filter(b=>Number(b.jumlah)>0);
+const masukLain=f.masukLain.filter(b=>Number(b.jumlah)>0);
+const skUntukSesi=activeSiklus();
+STATE.sesi.push({id:sesiId,tanggal,lokasi:f.lokasi||STATE.settings.lokasi,hadirFull,partial,biaya,masukLain,siklusId:skUntukSesi?skUntukSesi.id:null});
+let n=0; const add=(o)=>{ n++; STATE.transactions.push(Object.assign({id:'t-'+uid()+n,createdAt:Date.now()+n},o)); };
+hadirFull.forEach(h=>rememberName(h.nama));
+partial.forEach(p=>{ rememberName(p.nama); add({tanggal,jenis:'Masuk',kategori:'Iuran Partial',keterangan:'Iuran partial - sesi '+dLabel(tanggal),jumlah:p.jumlah,nama:p.nama,sesiId}); });
+biaya.forEach(b=>{
+let ket=b.keterangan;
+if(!ket && b.kategori==='Sewa Lapangan') ket=`Sewa lapangan ${b.jenisLapangan||''} ${b.noLapangan||''} (${b.jam||''})`.replace(/\s+/g,' ').trim();
+add({tanggal,jenis:'Keluar',kategori:b.kategori,keterangan:ket||b.kategori,jumlah:Number(b.jumlah),sesiId});
+});
+masukLain.forEach(b=>add({tanggal,jenis:'Masuk',kategori:'Lainnya (Pemasukan)',keterangan:b.keterangan||'Pemasukan lain',jumlah:Number(b.jumlah),sesiId}));
+await saveKey('sesi'); await saveKey('transactions');
+STATE.sesiForm=null; STATE.tab='dashboard'; window.scrollTo(0,0); render(); toast('Sesi tersimpan.');
+});
+const ct=STATE.calcTambahan;
+['ct-lokasi','ct-tanggal','ct-durasi'].forEach(id=>{
+const el=root.querySelector('#'+id); if(!el) return;
+el.addEventListener('change',()=>{
+ct.lokasi=root.querySelector('#ct-lokasi').value;
+ct.tanggal=root.querySelector('#ct-tanggal').value;
+ct.durasi=root.querySelector('#ct-durasi').value;
+render();
+});
+});
+const ctOrang=root.querySelector('#ct-orang');
+if(ctOrang) ctOrang.addEventListener('change',()=>{ ct.jumlahOrang=Number(String(ctOrang.value).replace(/\D/g,''))||0; render(); });
+['ct-harga','ct-shuttle'].forEach(id=>{
+const el=root.querySelector('#'+id); if(!el) return;
+el.addEventListener('change',()=>{
+ct.hargaLapangan=moneyVal(root.querySelector('#ct-harga'));
+ct.hargaShuttlecock=moneyVal(root.querySelector('#ct-shuttle'));
+render();
+});
+});
+}
+if(STATE.tab==="riwayat"){
+root.querySelector('#rf-bulan').addEventListener('change',e=>{ STATE.riwayatFilter.bulan=e.target.value; render(); });
+root.querySelector('#rf-kategori').addEventListener('change',e=>{ STATE.riwayatFilter.kategori=e.target.value; render(); });
+root.querySelectorAll('.del').forEach(b=>b.addEventListener('click',async()=>{
+if(!confirm('Hapus transaksi ini?')) return;
+STATE.transactions=STATE.transactions.filter(t=>t.id!==b.dataset.id);
+await saveKey('transactions'); render(); toast('Transaksi dihapus.');
+}));
+root.querySelectorAll('[data-hapus-sesi]').forEach(b=>b.addEventListener('click',async()=>{
+if(!confirm('Hapus sesi ini beserta seluruh transaksinya?')) return;
+const sid=b.dataset.hapusSesi;
+STATE.sesi=STATE.sesi.filter(s=>s.id!==sid);
+STATE.transactions=STATE.transactions.filter(t=>t.sesiId!==sid);
+await saveKey('sesi'); await saveKey('transactions'); render(); toast('Sesi dihapus.');
+}));
+}
+if(STATE.tab==="anggota"){
+const skAktifWk=activeSiklus();
+const wkCount=STATE.sesi.filter(se=>skAktifWk?se.siklusId===skAktifWk.id:true).length;
+if(wkCount>1) attachAutoRail('#wk-rail','#wk-dots',wkCount,5000,'wkIdx');
+root.querySelectorAll('[data-sk-mulai]').forEach(el=>el.addEventListener('change',async()=>{
+const sk=STATE.siklus.find(s=>s.id===el.dataset.skMulai);
+sk.mulai=el.value; sk.label=skLabel(sk.mulai,sk.id); sk.updatedAt=Date.now();
+STATE.transactions.filter(t=>t.siklusId===sk.id).forEach(t=>t.keterangan='Iuran '+sk.label);
+await saveKey('siklus'); await saveKey('transactions'); render(); toast('Siklus diperbarui.');
+}));
+root.querySelectorAll('[data-sk-lokasi]').forEach(el=>el.addEventListener('input',()=>{
+const sk=STATE.siklus.find(s=>s.id===el.dataset.skLokasi); sk.lokasi=el.value;
+}));
+root.querySelectorAll('[data-sk-lokasi]').forEach(el=>el.addEventListener('change',async()=>{ await saveKey('siklus'); }));
+root.querySelectorAll('[data-lmno]').forEach(el=>el.addEventListener('input',()=>{
+const sk=STATE.siklus.find(s=>(s.lapanganMember||[]).some(c=>c.id===el.dataset.lmno));
+const c=sk.lapanganMember.find(x=>x.id===el.dataset.lmno); c.noLapangan=el.value;
+}));
+root.querySelectorAll('[data-lmno]').forEach(el=>el.addEventListener('change',async()=>{
+const sk=STATE.siklus.find(s=>(s.lapanganMember||[]).some(c=>c.id===el.dataset.lmno));
+const c=sk.lapanganMember.find(x=>x.id===el.dataset.lmno);
+const tx=STATE.transactions.find(t=>t.lapanganId===c.id);
+if(tx){ tx.noLapangan=c.noLapangan; tx.keterangan='Sewa lapangan member '+(c.noLapangan||'')+' - '+sk.label; await saveKey('transactions'); }
+await saveKey('siklus');
+}));
+root.querySelectorAll('[data-lmjam]').forEach(el=>el.addEventListener('input',()=>{
+const sk=STATE.siklus.find(s=>(s.lapanganMember||[]).some(c=>c.id===el.dataset.lmjam));
+const c=sk.lapanganMember.find(x=>x.id===el.dataset.lmjam); c.jam=el.value;
+}));
+root.querySelectorAll('[data-lmjam]').forEach(el=>el.addEventListener('change',async()=>{ await saveKey('siklus'); }));
+root.querySelectorAll('[data-lmjml]').forEach(el=>el.addEventListener('input',async()=>{
+reformatMoney(el);
+const sk=STATE.siklus.find(s=>(s.lapanganMember||[]).some(c=>c.id===el.dataset.lmjml));
+const c=sk.lapanganMember.find(x=>x.id===el.dataset.lmjml);
+c.biaya=moneyVal(el);
+const tx=STATE.transactions.find(t=>t.lapanganId===c.id);
+if(tx){ tx.jumlah=c.biaya; await saveKey('transactions'); }
+await saveKey('siklus');
+}));
+root.querySelectorAll('[data-lm-del]').forEach(el=>el.addEventListener('click',async()=>{
+const cid=el.dataset.lmDel;
+const sk=STATE.siklus.find(s=>(s.lapanganMember||[]).some(c=>c.id===cid));
+if(!sk) return;
+const c=sk.lapanganMember.find(x=>x.id===cid);
+if(!confirm(`Hapus lapangan member "${c.noLapangan||'ini'}" dari ${sk.label}? Gunakan ini hanya jika salah input — lapangan yang memang dipakai & sudah dibayar sebaiknya tidak dihapus. Transaksi biayanya juga akan terhapus.`)) return;
+sk.lapanganMember=sk.lapanganMember.filter(x=>x.id!==cid);
+STATE.transactions=STATE.transactions.filter(t=>t.lapanganId!==cid);
+await saveKey('siklus'); await saveKey('transactions'); render(); toast('Lapangan member dihapus.');
+}));
+root.querySelectorAll('[data-lm-add]').forEach(el=>el.addEventListener('click',async()=>{
+const sk=STATE.siklus.find(s=>s.id===el.dataset.lmAdd);
+if(!sk.lapanganMember) sk.lapanganMember=[];
+const id='lm-'+uid();
+const slot={id,noLapangan:'Lapangan '+(sk.lapanganMember.length+1),jam:'',biaya:0};
+sk.lapanganMember.push(slot);
+STATE.transactions.push({id:'t-'+uid(),createdAt:Date.now(),tanggal:sk.mulai||todayStr(),jenis:'Keluar',kategori:'Sewa Lapangan',
+keterangan:'Sewa lapangan member '+slot.noLapangan+' - '+sk.label,jumlah:0,jenisLapangan:'Member',noLapangan:slot.noLapangan,siklusId:sk.id,lapanganId:id});
+await saveKey('siklus'); await saveKey('transactions'); render(); toast('Lapangan member ditambahkan — isi biayanya di bawah.');
+}));
+root.querySelectorAll('[data-slotnama]').forEach(el=>el.addEventListener('input',()=>{
+const sk=STATE.siklus.find(s=>s.full.some(f=>f.id===el.dataset.slotnama));
+const slot=sk.full.find(f=>f.id===el.dataset.slotnama); slot.nama=el.value;
+}));
+root.querySelectorAll('[data-slotnama]').forEach(el=>el.addEventListener('change',async()=>{ rememberName(el.value); await saveKey('siklus'); }));
+root.querySelectorAll('[data-slotjml]').forEach(el=>el.addEventListener('input',async()=>{
+reformatMoney(el);
+const sk=STATE.siklus.find(s=>s.full.some(f=>f.id===el.dataset.slotjml));
+const slot=sk.full.find(f=>f.id===el.dataset.slotjml); slot.jumlah=moneyVal(el);
+const tx=STATE.transactions.find(t=>t.slotId===slot.id);
+if(tx){ tx.jumlah=slot.jumlah; await saveKey('transactions'); }
+await saveKey('siklus');
+}));
+root.querySelectorAll('[data-slotlunas]').forEach(el=>el.addEventListener('change',async()=>{
+const sk=STATE.siklus.find(s=>s.full.some(f=>f.id===el.dataset.slotlunas));
+const slot=sk.full.find(f=>f.id===el.dataset.slotlunas); slot.lunas=el.checked;
+if(el.checked){
+if(!slot.nama.trim()){ toast('Isi nama dulu sebelum menandai lunas.'); slot.lunas=false; render(); return; }
+rememberName(slot.nama);
+STATE.transactions.push({id:'t-'+uid(),createdAt:Date.now(),tanggal:todayStr(),jenis:'Masuk',kategori:'Iuran Full',
+keterangan:'Iuran '+sk.label,jumlah:slot.jumlah,nama:slot.nama,siklusId:sk.id,slotId:slot.id,sesiId:sesiPertamaSiklusId(sk.id)});
+}else{
+STATE.transactions=STATE.transactions.filter(t=>t.slotId!==slot.id);
+}
+await saveKey('siklus'); await saveKey('transactions'); render(); toast(el.checked?'Ditandai lunas.':'Ditandai belum lunas.');
+}));
+root.querySelectorAll('[data-slotdel]').forEach(el=>el.addEventListener('click',async()=>{
+const sk=STATE.siklus.find(s=>s.full.some(f=>f.id===el.dataset.slotdel));
+sk.full=sk.full.filter(f=>f.id!==el.dataset.slotdel);
+STATE.transactions=STATE.transactions.filter(t=>t.slotId!==el.dataset.slotdel);
+await saveKey('siklus'); await saveKey('transactions'); render(); toast('Slot dihapus.');
+}));
+root.querySelectorAll('[data-slot-add]').forEach(el=>el.addEventListener('click',async()=>{
+const sk=STATE.siklus.find(s=>s.id===el.dataset.slotAdd);
+sk.full.push({id:'sl-'+uid(),nama:'',jumlah:STATE.settings.iuranFull,lunas:false});
+await saveKey('siklus'); render();
+}));
+root.querySelectorAll('[data-sk-del]').forEach(el=>el.addEventListener('click',async()=>{
+if(!confirm('Hapus siklus ini beserta seluruh catatan iurannya?')) return;
+const skid=el.dataset.skDel;
+STATE.siklus=STATE.siklus.filter(s=>s.id!==skid);
+STATE.transactions=STATE.transactions.filter(t=>t.siklusId!==skid);
+await saveKey('siklus'); await saveKey('transactions'); render(); toast('Siklus dihapus.');
+}));
+if(root.querySelector('#btn-siklus-baru')) root.querySelector('#btn-siklus-baru').addEventListener('click',()=>{
+const urutSk=siklusUrut(); const prev=urutSk[urutSk.length-1];
+STATE.siklusDraft={ mulai:todayStr(), prevId:prev?prev.id:null,
+entries:(prev?prev.full:[]).map(f=>({nama:f.nama,status:'full'})) };
+render();
+});
+if(root.querySelector('#draft-mulai')) root.querySelector('#draft-mulai').addEventListener('change',e=>{ STATE.siklusDraft.mulai=e.target.value; });
+root.querySelectorAll('[data-draft-status]').forEach(el=>el.addEventListener('change',()=>{
+STATE.siklusDraft.entries[Number(el.dataset.draftStatus)].status=el.value;
+}));
+if(root.querySelector('#btn-siklus-draft-batal')) root.querySelector('#btn-siklus-draft-batal').addEventListener('click',()=>{ STATE.siklusDraft=null; render(); });
+if(root.querySelector('#btn-siklus-draft-confirm')) root.querySelector('#btn-siklus-draft-confirm').addEventListener('click',async()=>{
+const d=STATE.siklusDraft;
+const mulai=root.querySelector('#draft-mulai').value||todayStr();
+const prev=d.prevId?STATE.siklus.find(s=>s.id===d.prevId):null;
+const full=d.entries.filter(e=>e.status==='full').map(e=>({id:'sl-'+uid(),nama:e.nama,jumlah:STATE.settings.iuranFull,lunas:false}));
+const namaBaru=(root.querySelector('#draft-baru').value||'').split(',').map(s=>s.trim()).filter(Boolean);
+namaBaru.forEach(nm=>{ full.push({id:'sl-'+uid(),nama:nm,jumlah:STATE.settings.iuranFull,lunas:false}); rememberName(nm); });
+if(!full.length){ toast('Belum ada anggota full untuk siklus ini — pilih minimal satu "Lanjut Full" atau tambah anggota baru.'); return; }
+STATE.siklus.push({id:'sik-'+uid(),label:skLabel(mulai),mulai,full,lapanganMember:[],lokasi:(prev&&prev.lokasi)||STATE.settings.lokasi,updatedAt:Date.now()});
+STATE.siklusDraft=null;
+await saveKey('siklus'); render(); toast('Siklus baru dibuat.');
+});
+root.querySelector('#btn-pool-add').addEventListener('click',async()=>{
+const nm=root.querySelector('#pool-nama').value.trim();
+if(!nm){ toast('Nama belum diisi.'); return; }
+rememberName(nm); render(); toast('Nama ditambahkan.');
+});
+root.querySelectorAll('[data-pool-del]').forEach(el=>el.addEventListener('click',async()=>{
+STATE.pool=STATE.pool.filter(n=>n!==el.dataset.poolDel);
+await saveKey('pool'); render();
+}));
+}
+if(STATE.tab==="pengaturan"){
+root.querySelector('#btn-simpan-pengaturan').addEventListener('click',async()=>{
+const s=STATE.settings, q=id=>root.querySelector('#'+id);
+s.pbName=q('s-pbName').value.trim()||s.pbName;
+s.pbKepanjangan=q('s-pbKepanjangan').value.trim();
+s.pbSlogan=q('s-pbSlogan').value.trim();
+s.iuranFull=moneyVal(q('s-iuranFull'));
+s.tarifPartial=moneyVal(q('s-tarifPartial'));
+await saveKey('settings'); render(); toast('Pengaturan tersimpan.');
+});
+attachSyncHandlers();
+root.querySelector('#btn-export').addEventListener('click',doExport);
+const fi=root.querySelector('#file-import');
+if(fi) fi.addEventListener('change',async e=>{ const f2=e.target.files&&e.target.files[0]; e.target.value=''; await doImport(f2); });
+root.querySelector('#btn-reseed').addEventListener('click',async()=>{
+if(!confirm('Pulihkan data contoh Juli 2026? Data saat ini akan diganti.')) return;
+const d=seedData();
+STATE.pool=d.pool; STATE.siklus=d.siklus; STATE.sesi=d.sesi; STATE.transactions=d.transactions; STATE.galeri=d.galeri; STATE.settings=d.settings;
+await saveAll();
+STATE.tab='dashboard'; window.scrollTo(0,0); render(); toast('Data contoh dipulihkan.');
+});
+}
+}
+root.addEventListener('input',e=>{
+const el=e.target;
+if(!el.matches||!el.matches('[data-money]')) return;
+reformatMoney(el);
+if(el.hasAttribute('data-bjml')) STATE.sesiForm.biaya[Number(el.dataset.bjml)].jumlah=moneyVal(el);
+if(el.hasAttribute('data-mjml')) STATE.sesiForm.masukLain[Number(el.dataset.mjml)].jumlah=moneyVal(el);
+});
+//=====BAGIAN2-SELESAI=====
+/* =================== Ekspor / Impor Excel =================== */
+const CUR='_-[$IDR]\\ * #,##0_-;\\-[$IDR]\\ * #,##0_-;_-[$IDR]\\ * "-"_-;_-@_-';
+const DATE_SHORT='dd\\-mmm\\-yyyy';
+const ST={
+title  :{sz:14,b:1,fc:'FFFFFFFF',bg:'FF0E0E0E'},
+note   :{sz:9,i:1,fc:'FF666666',wrap:1},
+sect   :{sz:11,b:1,fc:'FFFFFFFF',bg:'FFC9A24B'},
+head   :{sz:10,b:1,fc:'FFFFFFFF',bg:'FFE8C36E',al:'center',wrap:1,bd:1},
+cell   :{sz:10,bd:1},
+cellw  :{sz:10,wrap:1,bd:1},
+cellc  :{sz:10,al:'center',bd:1},
+bold   :{sz:10,b:1,bd:1},
+moneyr :{sz:10,al:'right',bd:1},
+total  :{sz:10,b:1,bg:'FFF3E7C9',bd:1},
+};
+function txt(v,st){ return {t:'s',v,st:st||'cell'}; }
+function money(v,st){ return {t:'n',v:Number(v)||0,z:CUR,st:st||'cell'}; }
+function dt(s,st,z){ return {t:'d',v:s,z:z||DATE_SHORT,st:st||'cellc'}; }
+function colLetter(n){ let s=""; while(n>0){ const r=(n-1)%26; s=String.fromCharCode(65+r)+s; n=Math.floor((n-1)/26); } return s; }
+function refToRC(ref){ const m=/^([A-Z]+)(\d+)$/.exec(ref); let c=0; for(const ch of m[1]) c=c*26+(ch.charCodeAt(0)-64); return {r:Number(m[2])-1,c:c-1}; }
+function SH(){ return {rows:[],merges:[],cols:[],heights:{}}; }
+function put(sh,ref,cell){ const {r,c}=refToRC(ref); while(sh.rows.length<=r) sh.rows.push([]); const row=sh.rows[r]; while(row.length<=c) row.push(null); row[c]=cell; }
+function ROW(sh,ref,cells){ const {r,c}=refToRC(ref); cells.forEach((v,i)=>{ if(v!==undefined&&v!==null) put(sh,colLetter(c+1+i)+(r+1),v); }); }
+function banner(sh,ref,text,lastCol,style,h){
+put(sh,ref,txt(text,style)); const {r,c}=refToRC(ref);
+sh.merges.push(`${ref}:${lastCol}${r+1}`);
+for(let x=c+2;x<=refToRC(lastCol+'1').c+1;x++) put(sh,colLetter(x)+(r+1),txt('',style));
+if(h) sh.heights[r+1]=h;
+}
+function HEAD(sh,ref,labels){ ROW(sh,ref,labels.map(l=>txt(l,'head'))); }
+function buildExport(){
+const s=STATE.settings, out=[];
+const pd=SH();
+banner(pd,'A1','PANDUAN — KAS '+s.pbName,'C','title');
+banner(pd,'A2','Dihasilkan otomatis pada '+todayStr()+'. Sheet "Sesi ..." adalah satu buku catatan per sesi main; "Siklus Keanggotaan" adalah roster iuran per siklus (~4x main, bukan bulan kalender).','C','note',32);
+pd.cols=[{w:20},{w:40},{w:60}];
+out.push({name:'Panduan',sh:pd});
+const dm=SH();
+banner(dm,'A1','PENGATURAN','C','title');
+HEAD(dm,'A3',['Kunci','Nilai','Keterangan']);
+const rows=[['Nama PB',s.pbName,''],['Kepanjangan',s.pbKepanjangan,''],['Slogan',s.pbSlogan,''],
+['Lokasi',s.lokasi,''],['Jumlah Lapangan',s.jumlahLapangan,''],
+['Iuran Full (per siklus)',s.iuranFull,'Rp'],['Tarif Partial (per sesi)',s.tarifPartial,'Rp']];
+rows.forEach((r,i)=>ROW(dm,'A'+(4+i),[txt(String(r[0]),'bold'),typeof r[1]==='number'?money(r[1]):txt(String(r[1]??''),'cell'),txt(r[2],'cellw')]));
+dm.cols=[{w:26},{w:28},{w:40}];
+out.push({name:'Pengaturan',sh:dm});
+const sl=SH();
+banner(sl,'A1','SIKLUS KEANGGOTAAN (FULL)','H','title');
+HEAD(sl,'A3',['Siklus','Mulai','Nama','Iuran (Rp)','Lunas?','No Lapangan Member','Jam','Biaya Lapangan (Rp)']);
+let r=4;
+siklusUrut().forEach(sk=>{
+sk.full.forEach(fm=>{
+ROW(sl,'A'+r,[txt(sk.label,'bold'),dt(sk.mulai),txt(fm.nama,'cell'),money(fm.jumlah),txt(fm.lunas?'YA':'BELUM','cellc')]); r++;
+});
+(sk.lapanganMember||[]).forEach(lm=>{
+ROW(sl,'A'+r,[txt(sk.label,'bold'),dt(sk.mulai),txt('','cell'),txt('','cell'),txt('','cellc'),txt(lm.noLapangan,'cell'),txt(lm.jam,'cell'),money(lm.biaya)]); r++;
+});
+});
+sl.cols=[{w:20},{w:14},{w:22},{w:16},{w:12},{w:18},{w:14},{w:16}];
+out.push({name:'Siklus Keanggotaan',sh:sl});
+const rk=SH();
+banner(rk,'A1','REKAP MINGGUAN','F','title');
+HEAD(rk,'A3',['Tanggal','Lokasi','Pemasukan (Rp)','Pengeluaran (Rp)','Kas Setelahnya (Rp)']);
+sesiUrut().forEach((se,i)=>{ const t=sesiTotals(se.id);
+ROW(rk,'A'+(4+i),[dt(se.tanggal),txt(se.lokasi,'cellw'),money(t.masuk),money(t.keluar),money(saldoSampai(se.tanggal),'total')]); });
+rk.cols=[{w:14},{w:26},{w:16},{w:16},{w:18}];
+out.push({name:'Rekap Mingguan',sh:rk});
+sesiUrut().forEach(se=>{
+const m=SH();
+banner(m,'A1','SESI '+se.tanggal,'D','title');
+banner(m,'A2',se.lokasi,'D','note',18);
+banner(m,'A4','MEMBER FULL HADIR','B','sect');
+HEAD(m,'A5',['No','Nama']);
+(se.hadirFull||[]).forEach((h,i)=>ROW(m,'A'+(6+i),[txt(i+1,'cellc'),txt(h.nama,'cell')]));
+let row=6+(se.hadirFull||[]).length+1;
+banner(m,'A'+row,'MEMBER PARTIAL HADIR','C','sect'); row++;
+HEAD(m,'A'+row,['No','Nama','Iuran (Rp)']); row++;
+se.partial.forEach((p,i)=>{ ROW(m,'A'+row,[txt(i+1,'cellc'),txt(p.nama,'cell'),money(p.jumlah)]); row++; });
+row++;
+banner(m,'A'+row,'BIAYA OPERASIONAL (termasuk lapangan: jenis / no. / jam pada keterangan)','D','sect'); row++;
+HEAD(m,'A'+row,['Kategori','Keterangan','','Jumlah (Rp)']); row++;
+se.biaya.forEach(b=>{ const ket=b.jenisLapangan?`${b.keterangan} [${b.jenisLapangan}${b.noLapangan?' · '+b.noLapangan:''}${b.jam?' · '+b.jam:''}]`:b.keterangan;
+ROW(m,'A'+row,[txt(b.kategori,'cell'),txt(ket,'cellw'),txt('','cell'),money(b.jumlah)]); row++; });
+row++;
+banner(m,'A'+row,'PEMASUKAN LAIN','D','sect'); row++;
+HEAD(m,'A'+row,['Keterangan','','','Jumlah (Rp)']); row++;
+se.masukLain.forEach(b=>{ ROW(m,'A'+row,[txt(b.keterangan,'cellw'),txt('','cell'),txt('','cell'),money(b.jumlah)]); row++; });
+m.cols=[{w:20},{w:34},{w:14},{w:16}];
+out.push({name:('Sesi '+se.tanggal).slice(0,31),sh:m});
+});
+return out;
+}
+window.__buildExport=buildExport;
+function loadExcelJS(){
+if(window.ExcelJS) return Promise.resolve();
+return new Promise((res,rej)=>{
+const sc=document.createElement('script');
+sc.src='https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js';
+sc.onload=()=>res(); sc.onerror=()=>rej(new Error('load'));
+document.head.appendChild(sc);
+});
+}
+function applyStyle(cell,stName){
+const st=ST[stName]||ST.cell;
+const f={name:'Arial',size:st.sz||10,bold:!!st.b,italic:!!st.i};
+if(st.fc) f.color={argb:st.fc};
+cell.font=f;
+if(st.bg) cell.fill={type:'pattern',pattern:'solid',fgColor:{argb:st.bg}};
+if(st.al||st.wrap){ const a={vertical:'center'}; if(st.al) a.horizontal=st.al; if(st.wrap) a.wrapText=true; cell.alignment=a; }
+if(st.bd){ const b={style:'thin',color:{argb:'FFBFBFBF'}}; cell.border={top:b,left:b,bottom:b,right:b}; }
+}
+let EXPORTING=false;
+async function doExport(){
+if(EXPORTING) return; EXPORTING=true;
+const btn=root.querySelector('#btn-export'), label=btn?btn.textContent:'';
+if(btn){ btn.disabled=true; btn.textContent='Memuat pustaka Excel…'; }
+try{
+await loadExcelJS();
+if(btn) btn.textContent='Menyusun workbook…';
+const data=buildExport();
+const wb=new ExcelJS.Workbook();
+wb.creator=STATE.settings.pbName; wb.created=new Date();
+data.forEach(({name,sh})=>{
+const ws=wb.addWorksheet(name.slice(0,31));
+(sh.cols||[]).forEach((c,i)=>{ ws.getColumn(i+1).width=c.w; });
+sh.rows.forEach((row,ri)=>{ (row||[]).forEach((c,ci)=>{
+if(!c) return;
+const cell=ws.getCell(ri+1,ci+1);
+if(c.t==='d'){ const [y,mo,d]=String(c.v).split('-').map(Number); cell.value=new Date(Date.UTC(y,mo-1,d)); }
+else cell.value=c.v;
+if(c.z) cell.numFmt=c.z;
+applyStyle(cell,c.st);
+}); });
+Object.entries(sh.heights||{}).forEach(([r2,h])=>{ ws.getRow(Number(r2)).height=h; });
+(sh.merges||[]).forEach(rg=>{ try{ ws.mergeCells(rg); }catch(e){} });
+});
+const buf=await wb.xlsx.writeBuffer();
+const blob=new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+const url=URL.createObjectURL(blob);
+const a=document.createElement('a'); a.href=url; a.download=`Kas-${STATE.settings.pbName.replace(/\s+/g,'-')}_${todayStr()}.xlsx`;
+document.body.appendChild(a); a.click(); a.remove();
+setTimeout(()=>URL.revokeObjectURL(url),5000);
+toast('File Excel berhasil diunduh.');
+}catch(e){ console.error(e); toast(e && e.message==='load' ? 'Gagal memuat pustaka Excel.' : 'Ekspor gagal. Coba lagi.'); }
+finally{ EXPORTING=false; if(btn){ btn.disabled=false; btn.textContent=label||'Unduh sebagai file Excel'; } }
+}
+function cellRaw(ws,ref){
+const v=ws.getCell(ref).value;
+if(v&&typeof v==='object'&&!(v instanceof Date)){
+if('result' in v) return v.result;
+if('richText' in v) return v.richText.map(t=>t.text).join('');
+if('text' in v) return v.text;
+return null;
+}
+return v;
+}
+function cellNum(ws,ref){ const v=cellRaw(ws,ref); const n=Number(v); return isFinite(n)?n:0; }
+function cellStr(ws,ref){ const v=cellRaw(ws,ref); return v==null?'':String(v).trim(); }
+function cellDate(ws,ref){
+const v=cellRaw(ws,ref);
+if(v instanceof Date) return `${v.getUTCFullYear()}-${pad(v.getUTCMonth()+1)}-${pad(v.getUTCDate())}`;
+const s=String(v||'').trim(); const m=/^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(s);
+if(m) return `${m[1]}-${pad(Number(m[2]))}-${pad(Number(m[3]))}`;
+return null;
+}
+/* ====== Impor dari Excel rekap manual klub (format "Tot. Kehadiran Pemain" + "Rekap Biaya Op") ====== */
+function colLetter(n){ let s=''; while(n>0){ const m=(n-1)%26; s=String.fromCharCode(65+m)+s; n=Math.floor((n-1)/26); } return s; }
+function cellRC(ws,r,c){ return cellRaw(ws,colLetter(c)+r); }
+function cellStrRC(ws,r,c){ const v=cellRC(ws,r,c); return v==null?'':String(v).trim(); }
+function cellDateRC(ws,r,c){ return cellDate(ws,colLetter(c)+r); }
+function isNum(v){ return typeof v==='number' && isFinite(v); }
+function scanHeaderRow(ws,labels,maxRow){
+maxRow=maxRow||15; const maxCol=20;
+for(let r=1;r<=maxRow;r++){
+const found={};
+for(let c=1;c<=maxCol;c++){
+const raw=cellStrRC(ws,r,c); if(!raw) continue;
+const norm=raw.toLowerCase().replace(/\s+/g,' ').trim();
+labels.forEach(lab=>{ if(norm===lab.toLowerCase()) found[lab]=c; });
+}
+if(Object.keys(found).length>=2) return {row:r,cols:found};
+}
+return null;
+}
+function parseTanggalSheetKlub(name){
+const m=/\((\d{1,2})-(\d{1,2})-(\d{2,4})\)\s*$/.exec(String(name).trim());
+if(!m) return null;
+let d=Number(m[1]),mo=Number(m[2]),y=Number(m[3]); if(y<100) y+=2000;
+if(!d||!mo||!y) return null;
+return `${y}-${pad(mo)}-${pad(d)}`;
+}
+function klubKategoriKeluar(katRaw,ketRaw){
+const s=(String(katRaw)+' '+String(ketRaw)).toLowerCase();
+if(/shuttle|kok\b/.test(s)) return 'Shuttlecock';
+if(/lapangan/.test(s)) return 'Sewa Lapangan';
+return 'Lainnya (Pengeluaran)';
+}
+function detectLokasiKlub(ws){
+if(!ws) return '';
+let viaLabel='',viaAt='';
+for(let r=1;r<=8;r++){
+for(let c=1;c<=16;c++){
+const raw=cellStrRC(ws,r,c); if(!raw) continue;
+if(!viaLabel && /^lokasi$/i.test(raw)){
+const v=cellStrRC(ws,r,c+1);
+if(v&&!/^#[A-Z0-9\/]+[!?]?$/.test(v)) viaLabel=v;
+}
+if(!viaAt && raw.includes('@')){
+const part=raw.split('@')[1]; if(part&&part.trim()) viaAt=part.trim();
+}
+}
+}
+return viaLabel||viaAt||'';
+}
+function isWorkbookKlub(wb){
+let found=false;
+wb.eachSheet(ws=>{ if(/^Tot\.?\s*Kehadiran Pemain/i.test(ws.name)||/^Rekap Biaya Op/i.test(ws.name)) found=true; });
+return found;
+}
+function parseWorkbookKlub(wb){
+const hasil={pool:[],siklus:[],sesi:[],transactions:[],settings:clone(STATE.settings)};
+const st=hasil.settings;
+let n=0;
+wb.eachSheet(ws=>{
+const m=/^Total Member\s+(.+)$/i.exec(String(ws.name).trim());
+if(!m) return;
+const label=m[1].trim();
+const hdr=scanHeaderRow(ws,['No','Nama','Ket','Iuran'],12);
+if(!hdr||!hdr.cols['Nama']) return;
+const cNo=hdr.cols['No'],cNama=hdr.cols['Nama'],cKet=hdr.cols['Ket'],cIuran=hdr.cols['Iuran'];
+let mulai=null;
+for(let r=1;r<=6&&!mulai;r++){ for(let c=1;c<=12;c++){ if(cellRC(ws,r,c) instanceof Date){ mulai=cellDateRC(ws,r,c); break; } } }
+const full=[]; let r=hdr.row+1; const maxR=hdr.row+300;
+while(r<=maxR){
+const nama=cNama?cellStrRC(ws,r,cNama):''; const no=cNo?cellStrRC(ws,r,cNo):'';
+if(!nama&&!no) break;
+if(nama){ const jml=cIuran?cellRC(ws,r,cIuran):null; full.push({id:'sl-'+uid(),nama,jumlah:isNum(jml)?jml:st.iuranFull,lunas:cKet?!!cellRC(ws,r,cKet):true}); }
+r++;
+}
+if(full.length) hasil.siklus.push({id:'sik-'+uid(),label,mulai:mulai||todayStr(),full,lapanganMember:[],updatedAt:Date.now()});
+});
+const attSheets={},biSheets={};
+wb.eachSheet(ws=>{
+const nm=String(ws.name).trim();
+if(/^Tot\.?\s*Kehadiran Pemain/i.test(nm)){ const d=parseTanggalSheetKlub(nm); if(d) attSheets[d]=ws; }
+else if(/^Rekap Biaya Op/i.test(nm)){ const d=parseTanggalSheetKlub(nm); if(d) biSheets[d]=ws; }
+});
+const dates=[...new Set([...Object.keys(attSheets),...Object.keys(biSheets)])].sort();
+dates.forEach(tanggal=>{
+const wsA=attSheets[tanggal],wsB=biSheets[tanggal];
+const skCocok=(hasil.siklus||[]).filter(s=>s.mulai&&s.mulai<=tanggal).sort((a,b)=>b.mulai.localeCompare(a.mulai))[0];
+const lokasiSesi=detectLokasiKlub(wsA)||detectLokasiKlub(wsB)||st.lokasi;
+if(lokasiSesi&&!st.lokasi) st.lokasi=lokasiSesi;
+const sesiRec={id:'ses-'+uid(),tanggal,lokasi:lokasiSesi,hadirFull:[],partial:[],biaya:[],masukLain:[],siklusId:skCocok?skCocok.id:null};
+if(wsA){
+const hdr=scanHeaderRow(wsA,['No','Nama','Ket'],12);
+if(hdr&&hdr.cols['Nama']){
+const cNo=hdr.cols['No'],cNama=hdr.cols['Nama'],cKet=hdr.cols['Ket'];
+let r=hdr.row+1; const maxR=hdr.row+300;
+while(r<=maxR){
+const nama=cellStrRC(wsA,r,cNama); const no=cNo?cellStrRC(wsA,r,cNo):'';
+if(!nama&&!no) break;
+if(nama){
+let fee=0;
+if(cKet){ for(let c=cKet-1;c<=cKet+1;c++){ const v=cellRC(wsA,r,c); if(isNum(v)&&v>0){ fee=v; break; } } }
+if(fee>0) sesiRec.partial.push({nama,jumlah:fee});
+else sesiRec.hadirFull.push({nama});
+}
+r++;
+}
+}
+}
+if(wsB){
+const hdr=scanHeaderRow(wsB,['No','Kategori','Jenis','Keterangan','Total'],12);
+if(hdr&&hdr.cols['Keterangan']&&hdr.cols['Total']){
+const cKat=hdr.cols['Kategori']||hdr.cols['Jenis'],cKet=hdr.cols['Keterangan'],cTot=hdr.cols['Total'];
+const maxR=hdr.row+80;
+for(let r=hdr.row+1;r<=maxR;r++){
+const totVal=cellRC(wsB,r,cTot);
+if(!isNum(totVal)||totVal<=0) continue;
+const katRaw=cKat?cellStrRC(wsB,r,cKat):'', ketRaw=cKet?cellStrRC(wsB,r,cKet):'';
+if(!katRaw&&!ketRaw) continue;
+if(/member partial|member full/i.test(katRaw+' '+ketRaw)) continue;
+if(/pemasukan|^iuran/i.test(katRaw)){
+sesiRec.masukLain.push({keterangan:ketRaw||katRaw,jumlah:totVal});
+}else{
+const kategori=klubKategoriKeluar(katRaw,ketRaw);
+let jenisLapangan,noLapangan,jam;
+if(kategori==='Sewa Lapangan'){
+jenisLapangan=/non[\s-]*member/i.test(ketRaw)?'Non-Member':(/\bmember\b/i.test(ketRaw)?'Member':'Non-Member');
+const lm=/lapangan\s*(\d+)/i.exec(ketRaw); noLapangan=lm?('Lapangan '+lm[1]):'';
+jam=cellStrRC(wsB,r,cKet+1)||'';
+if(jenisLapangan==='Member'&&skCocok){
+if(!skCocok.lapanganMember) skCocok.lapanganMember=[];
+let slot=skCocok.lapanganMember.find(x=>x.noLapangan===noLapangan);
+if(!slot){ slot={id:'lm-'+uid(),noLapangan:noLapangan||('Lapangan '+(skCocok.lapanganMember.length+1)),jam:jam||'',biaya:totVal}; skCocok.lapanganMember.push(slot); }
+else if(!slot.jam&&jam) slot.jam=jam;
+}
+}
+sesiRec.biaya.push({kategori,keterangan:ketRaw||katRaw,jumlah:totVal,jenisLapangan,noLapangan,jam});
+}
+}
+}
+}
+hasil.sesi.push(sesiRec);
+sesiRec.hadirFull.forEach(h=>{ if(h.nama&&!hasil.pool.includes(h.nama)) hasil.pool.push(h.nama); });
+sesiRec.partial.forEach(p=>{ n++; hasil.transactions.push({id:'imp2-t-'+n,createdAt:n,tanggal,jenis:'Masuk',kategori:'Iuran Partial',keterangan:'Iuran partial - sesi '+tanggal,jumlah:p.jumlah,nama:p.nama,sesiId:sesiRec.id}); if(p.nama&&!hasil.pool.includes(p.nama)) hasil.pool.push(p.nama); });
+sesiRec.biaya.forEach(b=>{ n++; hasil.transactions.push({id:'imp2-t-'+n,createdAt:n,tanggal,jenis:'Keluar',kategori:b.kategori,keterangan:b.keterangan,jumlah:b.jumlah,sesiId:sesiRec.id,jenisLapangan:b.jenisLapangan,noLapangan:b.noLapangan,jam:b.jam}); });
+sesiRec.masukLain.forEach(b=>{ n++; hasil.transactions.push({id:'imp2-t-'+n,createdAt:n,tanggal,jenis:'Masuk',kategori:'Lainnya (Pemasukan)',keterangan:b.keterangan,jumlah:b.jumlah,sesiId:sesiRec.id}); });
+});
+hasil.siklus.forEach(sk=>sk.full.forEach(fm=>{
+if(fm.lunas&&fm.nama){ n++; const sesiPertama=hasil.sesi.filter(se=>se.siklusId===sk.id).sort((a,b)=>a.tanggal.localeCompare(b.tanggal))[0];
+hasil.transactions.push({id:'imp2-t-'+n,createdAt:n,tanggal:sk.mulai,jenis:'Masuk',kategori:'Iuran Full',keterangan:'Iuran '+sk.label,jumlah:fm.jumlah,nama:fm.nama,siklusId:sk.id,slotId:fm.id,sesiId:sesiPertama?sesiPertama.id:null}); if(!hasil.pool.includes(fm.nama)) hasil.pool.push(fm.nama); }
+}));
+return hasil;
+}
+window.__parseWorkbookKlub=parseWorkbookKlub;
+function parseWorkbook(wb){
+const hasil={pool:[],siklus:[],sesi:[],transactions:[],settings:clone(STATE.settings)};
+const st=hasil.settings;
+const pg=wb.getWorksheet('Pengaturan');
+if(pg){
+const map={}; for(let r=4;r<=12;r++){ const k=cellStr(pg,'A'+r); if(k) map[k]=cellRaw(pg,'B'+r); }
+if(map['Nama PB']) st.pbName=String(map['Nama PB']);
+if(map['Kepanjangan']!=null) st.pbKepanjangan=String(map['Kepanjangan']);
+if(map['Slogan']!=null) st.pbSlogan=String(map['Slogan']);
+if(map['Lokasi']!=null) st.lokasi=String(map['Lokasi']);
+if(map['Jumlah Lapangan']!=null) st.jumlahLapangan=Number(map['Jumlah Lapangan'])||st.jumlahLapangan;
+if(map['Iuran Full (per siklus)']!=null) st.iuranFull=Number(map['Iuran Full (per siklus)'])||st.iuranFull;
+if(map['Tarif Partial (per sesi)']!=null) st.tarifPartial=Number(map['Tarif Partial (per sesi)'])||st.tarifPartial;
+}
+const sl=wb.getWorksheet('Siklus Keanggotaan');
+if(sl){
+const byLabel={};
+for(let r=4;r<=400;r++){
+const label=cellStr(sl,'A'+r); if(!label) continue;
+if(!byLabel[label]) byLabel[label]={id:'sik-'+uid(),label,mulai:cellDate(sl,'B'+r)||todayStr(),full:[],lapanganMember:[],updatedAt:Date.now()};
+const nama=cellStr(sl,'C'+r);
+const noLap=cellStr(sl,'F'+r);
+if(nama){
+byLabel[label].full.push({id:'sl-'+uid(),nama,jumlah:cellNum(sl,'D'+r)||st.iuranFull,lunas:/ya/i.test(cellStr(sl,'E'+r))});
+}else if(noLap){
+byLabel[label].lapanganMember.push({id:'lm-'+uid(),noLapangan:noLap,jam:cellStr(sl,'G'+r),biaya:cellNum(sl,'H'+r)});
+}
+}
+hasil.siklus=Object.values(byLabel);
+}
+let n=0;
+wb.eachSheet(ws=>{
+const m=/^Sesi (\d{4}-\d{2}-\d{2})/.exec(ws.name);
+if(!m) return;
+const tanggal=m[1];
+const lokasi=cellStr(ws,'A2')||st.lokasi;
+const skCocok=(hasil.siklus||[]).filter(s=>s.mulai&&s.mulai<=tanggal).sort((a,b)=>b.mulai.localeCompare(a.mulai))[0];
+const sesiRec={id:'ses-'+uid(),tanggal,lokasi,hadirFull:[],partial:[],biaya:[],masukLain:[],siklusId:skCocok?skCocok.id:null};
+let r=6;
+while(cellStr(ws,'B'+r) && !/Nama/i.test(cellStr(ws,'B'+r))){ const nama=cellStr(ws,'B'+r); if(nama) sesiRec.hadirFull.push({nama}); r++; if(r>200) break; }
+r+=3;
+while(cellStr(ws,'B'+r) && !/Kategori/i.test(cellStr(ws,'A'+r))){ const nama=cellStr(ws,'B'+r); if(nama) sesiRec.partial.push({nama,jumlah:cellNum(ws,'C'+r)||st.tarifPartial}); r++; if(r>400) break; }
+r+=2;
+while(cellStr(ws,'A'+r) && cellStr(ws,'A'+r)!=='PEMASUKAN LAIN'){
+const kat=cellStr(ws,'A'+r), jml=cellNum(ws,'D'+r);
+if(jml>0){
+let keterangan=cellStr(ws,'B'+r), jenisLapangan,noLapangan,jam;
+const mm=/\[(.+?)\]$/.exec(keterangan);
+if(mm){ keterangan=keterangan.replace(/\s*\[.+?\]$/,''); const parts=mm[1].split('·').map(x=>x.trim()); jenisLapangan=parts[0]; noLapangan=parts[1]; jam=parts[2]; }
+sesiRec.biaya.push({kategori:kat||'Lainnya (Pengeluaran)',keterangan,jumlah:jml,jenisLapangan,noLapangan,jam});
+}
+r++; if(r>2000) break;
+}
+r+=2;
+while(cellStr(ws,'A'+r)){ const jml=cellNum(ws,'D'+r); if(jml>0) sesiRec.masukLain.push({keterangan:cellStr(ws,'A'+r),jumlah:jml}); r++; if(r>3000) break; }
+hasil.sesi.push(sesiRec);
+sesiRec.hadirFull.forEach(h=>{ if(h.nama && !hasil.pool.includes(h.nama)) hasil.pool.push(h.nama); });
+sesiRec.partial.forEach(p=>{ n++; hasil.transactions.push({id:'imp-t-'+n,createdAt:n,tanggal,jenis:'Masuk',kategori:'Iuran Partial',keterangan:'Iuran partial - sesi '+tanggal,jumlah:p.jumlah,nama:p.nama,sesiId:sesiRec.id}); if(p.nama&&!hasil.pool.includes(p.nama)) hasil.pool.push(p.nama); });
+sesiRec.biaya.forEach(b=>{ n++; hasil.transactions.push({id:'imp-t-'+n,createdAt:n,tanggal,jenis:'Keluar',kategori:b.kategori,keterangan:b.keterangan,jumlah:b.jumlah,sesiId:sesiRec.id}); });
+sesiRec.masukLain.forEach(b=>{ n++; hasil.transactions.push({id:'imp-t-'+n,createdAt:n,tanggal,jenis:'Masuk',kategori:'Lainnya (Pemasukan)',keterangan:b.keterangan,jumlah:b.jumlah,sesiId:sesiRec.id}); });
+});
+hasil.siklus.forEach(sk=>sk.full.forEach(fm=>{
+if(fm.lunas && fm.nama){ n++; const sesiPertama=hasil.sesi.filter(se=>se.siklusId===sk.id).sort((a,b)=>a.tanggal.localeCompare(b.tanggal))[0];
+hasil.transactions.push({id:'imp-t-'+n,createdAt:n,tanggal:sk.mulai,jenis:'Masuk',kategori:'Iuran Full',keterangan:'Iuran '+sk.label,jumlah:fm.jumlah,nama:fm.nama,siklusId:sk.id,slotId:fm.id,sesiId:sesiPertama?sesiPertama.id:null}); if(!hasil.pool.includes(fm.nama)) hasil.pool.push(fm.nama); }
+}));
+return hasil;
+}
+window.__parseWorkbook=parseWorkbook;
+async function doImport(file){
+if(!file) return;
+const btn=root.querySelector('#btn-import-label'); const asli=btn?btn.textContent:'';
+if(btn) btn.textContent='Membaca file…';
+try{
+await loadExcelJS();
+const buf=await file.arrayBuffer();
+const wb=new ExcelJS.Workbook(); await wb.xlsx.load(buf);
+const h=isWorkbookKlub(wb)?parseWorkbookKlub(wb):parseWorkbook(wb);
+if(!h.sesi.length && !h.siklus.length){ toast('Tidak ditemukan sheet Sesi/Siklus yang cocok di file itu.'); return; }
+if(!confirm(`Ditemukan ${h.sesi.length} sesi dan ${h.siklus.length} siklus. Impor akan MENGGANTI seluruh data yang ada. Lanjutkan?`)) return;
+STATE.pool=[...new Set([...STATE.pool,...h.pool])]; STATE.siklus=h.siklus; STATE.sesi=h.sesi; STATE.transactions=h.transactions; STATE.settings=h.settings;
+await saveAll();
+STATE.tab='dashboard'; window.scrollTo(0,0); render();
+toast(`${h.sesi.length} sesi berhasil diimpor.`);
+}catch(e){ console.error(e); toast(e && e.message==='load' ? 'Gagal memuat pustaka Excel.' : 'File tidak terbaca. Pastikan formatnya .xlsx.'); }
+finally{ if(btn) btn.textContent=asli||'Impor dari file Excel…'; }
+}
+window.__doImport=doImport;
+/* =================== Sinkronisasi Supabase =================== */
+const SYNC_KEY='kbr:sync';
+let SYNC={url:'',key:'',code:'',on:false};
+function loadSyncCfg(){ try{ const v=_lsGet(SYNC_KEY); if(v) SYNC=Object.assign(SYNC,JSON.parse(v)); }catch(e){} }
+function saveSyncCfg(){ _lsSet(SYNC_KEY,JSON.stringify(SYNC)); }
+function syncReady(){ return !!(SYNC.on&&SYNC.url&&SYNC.key&&SYNC.code); }
+function kodeAcak(){ const a='abcdefghjkmnpqrstuvwxyz23456789'; let s=''; for(let i=0;i<20;i++) s+=a[Math.floor(Math.random()*a.length)]; return s.replace(/(.{5})(?=.)/g,'$1-'); }
+async function rpc(fn,body){
+const base=String(SYNC.url).trim().replace(/\/+$/,'');
+const r=await fetch(base+'/rest/v1/rpc/'+fn,{method:'POST',
+headers:{'apikey':SYNC.key.trim(),'Authorization':'Bearer '+SYNC.key.trim(),'Content-Type':'application/json','Accept':'application/json'},
+body:JSON.stringify(body)});
+const teks=await r.text();
+if(!r.ok) throw new Error('HTTP '+r.status+(teks?' — '+teks.slice(0,140):''));
+return teks?JSON.parse(teks):null;
+}
+function umur(t){ if(!t) return null; const d=Math.round((Date.now()-t)/1000);
+if(d<60) return 'baru saja'; if(d<3600) return Math.round(d/60)+' menit lalu'; if(d<86400) return Math.round(d/3600)+' jam lalu'; return Math.round(d/86400)+' hari lalu'; }
+function mergeById(local,remote,idKey){
+const map=new Map();
+(local||[]).forEach(x=>map.set(x[idKey],x));
+(remote||[]).forEach(x=>{ const cur=map.get(x[idKey]); if(!cur||Number(x.updatedAt||x.createdAt||0)>Number(cur.updatedAt||cur.createdAt||0)) map.set(x[idKey],x); });
+return [...map.values()];
+}
+/* ===== TOMBSTONE: biar yang dihapus TIDAK hidup lagi saat sinkron ===== */
+const TOMB_KEYS=['siklus','sesi','transactions','galeri'];
+let SHADOW={};
+function idsOf(k){ return new Set((Array.isArray(STATE[k])?STATE[k]:[]).map(x=>x&&x.id).filter(Boolean)); }
+function refreshShadow(){ TOMB_KEYS.forEach(k=>SHADOW[k]=idsOf(k)); }
+function detectRemoved(k){
+if(TOMB_KEYS.indexOf(k)<0) return;
+const now=idsOf(k);
+if(SHADOW[k]){
+const removed=[];
+SHADOW[k].forEach(id=>{ if(!now.has(id)) removed.push(id); });
+if(removed.length){
+if(!STATE.tomb) STATE.tomb={};
+if(!STATE.tomb[k]) STATE.tomb[k]={};
+removed.forEach(id=>{ STATE.tomb[k][id]=Date.now(); });
+}
+}
+SHADOW[k]=now;
+}
+function mergeTomb(a,b){
+const out={};
+const add=src=>{ if(!src) return; Object.keys(src).forEach(k=>{ out[k]=out[k]||{}; Object.keys(src[k]).forEach(id=>{ const t=Number(src[k][id])||0; if(!(out[k][id]>t)) out[k][id]=t; }); }); };
+add(a); add(b); return out;
+}
+function pruneTomb(tomb){
+const cut=Date.now()-1000*60*60*24*60;
+Object.keys(tomb||{}).forEach(k=>Object.keys(tomb[k]||{}).forEach(id=>{ if(Number(tomb[k][id])<cut) delete tomb[k][id]; }));
+return tomb||{};
+}
+function applyTomb(list,k,tomb){ const tb=(tomb&&tomb[k])||{}; return (list||[]).filter(x=>!tb[x.id]); }
+function mergeState(remote){
+const tomb=pruneTomb(mergeTomb(STATE.tomb,remote&&remote.tomb));
+let out;
+if(!remote) out={pool:STATE.pool,siklus:STATE.siklus,sesi:STATE.sesi,transactions:STATE.transactions,galeri:STATE.galeri,settings:STATE.settings,settingsAt:STATE.settingsAt};
+else{
+const pool=[...new Set([...(STATE.pool||[]),...(remote.pool||[])])];
+const siklus=mergeById(STATE.siklus,remote.siklus,'id');
+const sesi=mergeById(STATE.sesi,remote.sesi,'id');
+const transactions=mergeById(STATE.transactions,remote.transactions,'id');
+const galeri=mergeById(STATE.galeri,remote.galeri,'id').slice(0,12);
+const rAt=Number(remote.settingsAt||0), lAt=Number(STATE.settingsAt||0);
+const settings=(rAt>lAt&&remote.settings)?remote.settings:STATE.settings;
+out={pool,siklus,sesi,transactions,galeri,settings,settingsAt:Math.max(rAt,lAt)};
+}
+TOMB_KEYS.forEach(k=>{ out[k]=applyTomb(out[k],k,tomb); });
+out.tomb=tomb;
+return out;
+}
+let syncTimer=null;
+function scheduleSync(){ if(!syncReady()) return; clearTimeout(syncTimer); syncTimer=setTimeout(()=>syncNow(true),1400); }
+async function syncNow(diam){
+if(!syncReady()||STATE.syncing) return false;
+STATE.syncing=true; STATE.syncMsg='Menyinkronkan…'; paintSync();
+try{
+const remote=await rpc('kbr_kas_get',{code:SYNC.code.trim()});
+const m=mergeState(remote);
+STATE.pool=m.pool; STATE.siklus=m.siklus; STATE.sesi=m.sesi; STATE.transactions=m.transactions; STATE.galeri=m.galeri;
+STATE.settings=m.settings; STATE.settingsAt=m.settingsAt; STATE.tomb=m.tomb||{};
+for(const k of KEYS) await store.set(k,JSON.stringify(STATE[k]));
+await store.set('settingsAt',String(STATE.settingsAt));
+await rpc('kbr_kas_set',{code:SYNC.code.trim(),payload:{v:1,pool:STATE.pool,siklus:STATE.siklus,sesi:STATE.sesi,
+transactions:STATE.transactions,galeri:STATE.galeri,settings:STATE.settings,settingsAt:STATE.settingsAt,tomb:STATE.tomb}});
+refreshShadow();
+STATE.syncAt=Date.now(); STATE.syncMsg=''; _lsSet('kbr:syncAt',String(STATE.syncAt));
+render();
+if(!diam) toast('Tersinkron dengan perangkat lain.');
+return true;
+}catch(e){ console.error(e); STATE.syncMsg='Gagal: '+(e.message||'tidak terhubung'); paintSync(); if(!diam) toast('Sinkronisasi gagal. '+(e.message||'').slice(0,80)); return false; }
+finally{ STATE.syncing=false; }
+}
+function syncStatusText(){
+if(!SYNC.on) return 'Nonaktif — data hanya tersimpan di perangkat ini.';
+if(!syncReady()) return 'Belum lengkap — isi URL proyek, kunci anon, dan kode klub.';
+if(STATE.syncMsg) return STATE.syncMsg;
+return STATE.syncAt?('Tersinkron '+umur(STATE.syncAt)):'Aktif — belum pernah menyinkronkan.';
+}
+function paintSync(){
+const el=root.querySelector('#sync-status'); if(!el) return;
+el.textContent=syncStatusText();
+el.className='tiny '+(STATE.syncMsg&&STATE.syncMsg.startsWith('Gagal')?'sync-bad':(syncReady()?'sync-ok':''));
+}
+const SQL_SETUP=`-- Jalankan sekali di Supabase -> SQL Editor -> New query -> Run
+create table if not exists kbr_kas (
+klub        text primary key,
+data        jsonb not null,
+updated_at  timestamptz not null default now()
+);
+alter table kbr_kas enable row level security;
+create or replace function kbr_kas_get(code text)
+returns jsonb language sql security definer set search_path = public as $$
+select data from kbr_kas where klub = code;
+$$;
+create or replace function kbr_kas_set(code text, payload jsonb)
+returns timestamptz language sql security definer set search_path = public as $$
+insert into kbr_kas (klub, data, updated_at)
+values (code, payload, now())
+on conflict (klub) do update
+set data = excluded.data, updated_at = now()
+returning updated_at;
+$$;
+revoke all on function kbr_kas_get(text) from public;
+revoke all on function kbr_kas_set(text, jsonb) from public;
+grant execute on function kbr_kas_get(text) to anon;
+grant execute on function kbr_kas_set(text, jsonb) to anon;`;
+function renderSyncCard(){
+return `
+<div class="slabel">Sinkronisasi antar perangkat</div>
+<div class="card">
+<div id="sync-status" class="tiny ${syncReady()?'sync-ok':''}" style="margin-bottom:12px;">${syncStatusText()}</div>
+<div class="seg" id="seg-sync" style="margin-bottom:${SYNC.on?'14px':'0'};">
+<button type="button" data-v="off" class="${SYNC.on?'':'active'}">Perangkat ini saja</button>
+<button type="button" data-v="on" class="${SYNC.on?'active':''}">Sinkron online</button>
+</div>
+<div id="sync-form" class="${SYNC.on?'':'hide'}">
+<div class="field"><label>URL proyek Supabase</label><input id="sy-url" type="text" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="https://xxxx.supabase.co" value="${esc(SYNC.url)}"/></div>
+<div class="field"><label>Kunci anon (public anon key)</label><input id="sy-key" type="text" autocapitalize="off" spellcheck="false" placeholder="eyJhbGciOi..." value="${esc(SYNC.key)}"/></div>
+<div class="field"><label>Kode klub — rahasia, sama di semua HP pengurus</label>
+<input id="sy-code" type="text" autocapitalize="off" spellcheck="false" placeholder="mis. kabur-badminton-7f3a" value="${esc(SYNC.code)}"/>
+<button type="button" class="tipnext" id="btn-kode" style="margin-top:8px;font-size:11.5px;font-weight:800;color:var(--gold-ink);">Buatkan kode acak →</button></div>
+<button class="btn btn-onyx" id="btn-sync-save" style="margin-top:4px;">Simpan &amp; sinkronkan sekarang</button>
+<div class="tiny" style="margin-top:10px;">Isi ketiganya persis sama di semua HP pengurus. Data digabung otomatis berdasarkan id, jadi catatan tidak saling menimpa.</div>
+<details style="margin-top:14px;">
+<summary style="font-size:12px;font-weight:800;color:var(--gold-ink);cursor:pointer;">Cara menyiapkan Supabase (gratis, ±10 menit)</summary>
+<ol style="font-size:12px;line-height:1.65;color:var(--ink-2);padding-left:18px;margin:10px 0 0;">
+<li>Buka supabase.com, daftar gratis, buat project baru (region Singapore).</li>
+<li>Masuk <b>SQL Editor</b> → New query → tempel skrip di bawah → Run.</li>
+<li>Masuk <b>Project Settings → API</b>. Salin <b>Project URL</b> dan <b>anon public key</b> ke kolom di atas.</li>
+<li>Buat kode klub yang panjang &amp; acak, isikan sama persis di HP semua pengurus.</li>
+</ol>
+<button type="button" class="btn btn-ghost" id="btn-salin-sql" style="margin-top:12px;">Salin skrip SQL</button>
+<pre id="sql-box" style="margin-top:10px;background:var(--sunk);border-radius:12px;padding:12px;font-size:10px;line-height:1.5;overflow-x:auto;white-space:pre;">${esc(SQL_SETUP)}</pre>
+</details>
+<div class="tiny" style="margin-top:14px;">Mau di-hosting online juga? Simpan file ini lalu drag-and-drop ke <b>app.netlify.com/drop</b> — gratis, langsung dapat link. Sinkronnya tetap lewat Supabase di atas.</div>
+</div>
+</div>`;
+}
+function attachSyncHandlers(){
+root.querySelectorAll('#seg-sync button').forEach(b=>b.addEventListener('click',async()=>{
+SYNC.on=b.dataset.v==='on'; saveSyncCfg(); render(); if(SYNC.on&&syncReady()) syncNow(false);
+}));
+const kode=root.querySelector('#btn-kode');
+if(kode) kode.addEventListener('click',()=>{ root.querySelector('#sy-code').value=kodeAcak(); });
+const salin=root.querySelector('#btn-salin-sql');
+if(salin) salin.addEventListener('click',async()=>{
+try{ await navigator.clipboard.writeText(SQL_SETUP); toast('Skrip SQL disalin.'); }
+catch(e){ const r=document.createRange(); r.selectNode(root.querySelector('#sql-box')); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); toast('Skrip tersorot — tekan lama lalu Salin.'); }
+});
+const simpan=root.querySelector('#btn-sync-save');
+if(simpan) simpan.addEventListener('click',async()=>{
+SYNC.url=root.querySelector('#sy-url').value.trim(); SYNC.key=root.querySelector('#sy-key').value.trim(); SYNC.code=root.querySelector('#sy-code').value.trim();
+SYNC.on=true; saveSyncCfg();
+if(!syncReady()){ toast('Ketiga kolom harus diisi.'); paintSync(); return; }
+simpan.disabled=true; simpan.textContent='Menghubungkan…';
+const ok=await syncNow(false);
+simpan.disabled=false; simpan.textContent='Simpan & sinkronkan sekarang';
+if(ok) toast('Sinkronisasi aktif.');
+});
+}
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) scheduleSync(); });
+setInterval(()=>{ if(!document.hidden) syncNow(true); },45000);
+(async function init(){ render(); await loadAll(); render(); if(syncReady()) syncNow(true); })();
+})();
+</script>
+<style>
+#floating-importer{position:fixed;z-index:999999;width:60px;height:60px;border-radius:50%;
+background:linear-gradient(135deg,#FFD700 0%,#D4AF37 100%);box-shadow:0 4px 15px rgba(0,0,0,.4);
+display:flex;align-items:center;justify-content:center;font-size:30px;color:#111;
+user-select:none;touch-action:none;cursor:grab;transition:opacity .3s ease;
+right:20px;bottom:calc(80px + env(safe-area-inset-bottom));}
+</style>
+<div id="floating-importer" title="Geser untuk pindah | Ketuk untuk Impor Excel">📥</div>
+<script>
+(function(){
+const btn=document.getElementById('floating-importer');
+if(!btn) return;
+let fileInput=document.getElementById('excel-input');
+if(!fileInput){
+fileInput=document.createElement('input'); fileInput.id='excel-input'; fileInput.type='file'; fileInput.accept='.xlsx'; fileInput.style.display='none';
+fileInput.addEventListener('change',e=>{ const f=e.target.files&&e.target.files[0]; e.target.value=''; if(f&&window.__doImport) window.__doImport(f); });
+document.body.appendChild(fileInput);
+}
+const savedPos=localStorage.getItem('bt_pos_v2');
+if(savedPos){ try{ const pos=JSON.parse(savedPos); btn.style.left=pos.x+'px'; btn.style.top=pos.y+'px'; btn.style.right='auto'; btn.style.bottom='auto'; }catch(e){} }
+let isDragging=false,startX,startY,hasMoved=false;
+btn.addEventListener('pointerdown',e=>{ isDragging=true; startX=e.clientX-btn.offsetLeft; startY=e.clientY-btn.offsetTop; btn.setPointerCapture(e.pointerId); btn.style.transition='none'; hasMoved=false; });
+btn.addEventListener('pointermove',e=>{ if(!isDragging)return; hasMoved=true; let x=e.clientX-startX,y=e.clientY-startY; x=Math.max(0,Math.min(window.innerWidth-60,x)); y=Math.max(0,Math.min(window.innerHeight-60,y)); btn.style.left=x+'px'; btn.style.top=y+'px'; btn.style.right='auto'; btn.style.bottom='auto'; });
+btn.addEventListener('pointerup',e=>{ if(!isDragging)return; isDragging=false; btn.releasePointerCapture(e.pointerId); btn.style.transition='opacity .3s ease, left .2s ease, top .2s ease'; localStorage.setItem('bt_pos_v2',JSON.stringify({x:btn.offsetLeft,y:btn.offsetTop})); if(!hasMoved) fileInput.click(); });
+const checkModal=()=>{ const isOpen=document.querySelector('.modal.show, #modal-pengaturan[style*="block"], .modal-active'); btn.style.display=isOpen?'none':'flex'; };
+setInterval(checkModal,500);
+})();
+</script>
+</body>
+</html>
