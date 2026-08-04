@@ -15,14 +15,7 @@
 <meta property="og:title" content="PB. KABUR BADMINTON — Kas"/>
 <meta property="og:description" content="Aplikasi kas &amp; keanggotaan PB. Kabur Badminton."/>
 <meta property="og:image" content="https://aruskas-pbkaburbadminton.vercel.app/og-banner.jpg"/>
-<meta property="og:image:type" content="image/jpeg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="PB. KABUR BADMINTON — Kas"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="PB. KABUR BADMINTON — Kas"/>
-<meta name="twitter:description" content="Aplikasi kas &amp; keanggotaan PB. Kabur Badminton."/>
-<meta name="twitter:image" content="https://aruskas-pbkaburbadminton.vercel.app/og-banner.jpg"/>
 <title>PB. KABUR BADMINTON — Kas</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -35,7 +28,8 @@
 --violet:#A78BFA;--silver:#C9CDD3;
 --sh-1:0 1px 2px rgba(0,0,0,.5),0 10px 26px -14px rgba(0,0,0,.6);
 --r-card:18px;--r-field:12px;
---font-ui:'Plus Jakarta Sans',system-ui,sans-serif;--font-dp:'Space Grotesk',system-ui,sans-serif;
+--font-ui:'Plus Jakarta Sans',system-ui,sans-serif;
+--font-dp:'Space Grotesk',system-ui,sans-serif;
 color-scheme:dark;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -249,7 +243,24 @@ pre#sql-box{background:var(--sunk);border:1px solid var(--line);border-radius:12
 .loading{display:flex;align-items:center;justify-content:center;height:70vh;color:var(--muted);font-size:13px}
 .empty{text-align:center;padding:34px 12px;color:var(--muted);font-size:13px;font-weight:500;line-height:1.6}
 .wk-slide{max-height:300px;overflow-y:auto}
-#floating-importer{position:fixed;z-index:999999;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#FFD700 0%,#D4AF37 100%);box-shadow:0 4px 15px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:26px;color:#111;user-select:none;touch-action:none;cursor:grab;right:16px;bottom:calc(84px + env(safe-area-inset-bottom))}
+.social-cta{border:1.5px solid var(--gold);border-radius:20px;padding:20px 16px 16px;margin-bottom:12px;background:var(--surface);box-shadow:0 0 24px rgba(201,162,75,.1)}
+.social-cta .scta-head{text-align:center;margin-bottom:14px}
+.social-cta .scta-title{font-size:15px;font-weight:800;color:var(--gold-2);line-height:1.3}
+.social-cta .scta-sub{font-size:11px;color:var(--muted);margin-top:4px;font-weight:500;line-height:1.5}
+.social-cta .scta-btn{display:flex;align-items:center;gap:12px;border-radius:14px;padding:12px 14px;text-decoration:none;color:#fff;margin-bottom:8px;position:relative;overflow:hidden}
+.social-cta .scta-btn:last-of-type{margin-bottom:0}
+.social-cta .scta-btn .scta-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex:none}
+.social-cta .scta-btn .scta-ic svg{width:20px;height:20px}
+.social-cta .scta-btn .scta-info{flex:1;min-width:0}
+.social-cta .scta-btn .scta-nm{font-size:13px;font-weight:800}
+.social-cta .scta-btn .scta-akun{font-size:10.5px;opacity:.8;font-weight:500}
+.social-cta .scta-btn .scta-follow{background:rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;font-size:11px;font-weight:800;color:#fff;white-space:nowrap;flex:none}
+.social-cta .scta-btn.ig-btn{background:linear-gradient(135deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888)}
+.social-cta .scta-btn.ig-btn .scta-ic{background:rgba(255,255,255,.2)}
+.social-cta .scta-btn.tt-btn{background:#111}
+.social-cta .scta-btn.tt-btn .scta-ic{background:rgba(255,255,255,.1)}
+.social-cta .scta-btn.tt-btn .scta-follow{color:#25f4ee}
+.social-cta .scta-footer{text-align:center;font-size:11px;color:var(--muted);margin-top:12px;font-weight:600}
 </style>
 </head>
 <body>
@@ -268,21 +279,6 @@ async delete(k){ delete _mem['kbr:'+k]; try{ localStorage.removeItem('kbr:'+k); 
 const MODE_MANDIRI = !(window.storage && typeof window.storage.get === 'function');
 /* =================== Logo & identitas ==================== */
 const LOGO_URI = "logo.jpg";
-const HIGHLIGHTS=[
-{group:"YouTube",platform:"yt",title:"Tips badminton — Kusuma Tangkas",desc:"Tips & teknik dari pelatih.",url:"https://www.youtube.com/@KUSUMATANGKAS",thumb:"https://unavatar.io/youtube/KUSUMATANGKAS"},
-{group:"YouTube",platform:"yt",title:"BWF — kabar resmi dunia badminton",desc:"Channel YouTube resmi BWF.",url:"https://www.youtube.com/@BWF",thumb:"https://unavatar.io/youtube/BWF"},
-{group:"YouTube",platform:"yt",title:"Match-match keras badminton",desc:"Rally dan match seru.",url:"https://www.youtube.com/@nabscn",thumb:"https://unavatar.io/youtube/nabscn"},
-{group:"Instagram",platform:"ig",title:"BWF Official",desc:"Update seputar badminton dari BWF.",url:"https://www.instagram.com/bwf.official/",thumb:"https://unavatar.io/instagram/bwf.official"},
-{group:"Instagram",platform:"ig",title:"Trik & teknik badminton",desc:"@liam912615 — trik dan teknik permainan.",url:"https://www.instagram.com/liam912615/",thumb:"https://unavatar.io/instagram/liam912615"},
-{group:"Instagram",platform:"ig",title:"@gragri_",desc:"Rekomendasi akun Instagram seputar badminton.",url:"https://www.instagram.com/gragri_/",thumb:"https://unavatar.io/instagram/gragri_"},
-{group:"Instagram",platform:"ig",title:"@badminton.ina",desc:"Rekomendasi akun Instagram seputar badminton.",url:"https://www.instagram.com/badminton.ina/",thumb:"https://unavatar.io/instagram/badminton.ina"},
-{group:"Instagram",platform:"ig",title:"PB Kabur Badminton",desc:"Akun Instagram resmi klub.",url:"https://www.instagram.com/pbkaburbadminton/",thumb:"https://unavatar.io/instagram/pbkaburbadminton?fallback=false"},
-{group:"TikTok",platform:"tt",title:"PB Kabur Badminton",desc:"Akun TikTok resmi klub.",url:"https://www.tiktok.com/@pbkaburbadminton",thumb:"https://unavatar.io/tiktok/pbkaburbadminton?fallback=false"},
-];
-const ICON_YT='<svg viewBox="0 0 24 24" fill="#fff"><path d="M10 15.5v-7l6 3.5-6 3.5Z"/></svg>';
-const ICON_IG='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/></svg>';
-const ICON_TT='<svg viewBox="0 0 24 24" fill="#fff"><path d="M16.6 3c.4 2.1 1.9 3.7 4.4 3.9v3c-1.7 0-3.1-.5-4.4-1.4v6.6c0 3.6-2.6 6-6 6-3.2 0-5.6-2.4-5.6-5.5 0-3 2.4-5.5 5.7-5.5.4 0 .9 0 1.3.1v3.1c-.4-.2-.9-.3-1.3-.3-1.5 0-2.7 1.2-2.7 2.6 0 1.5 1.2 2.6 2.7 2.6 1.6 0 2.9-1.1 2.9-3V3h3Z"/></svg>';
-/* ===PART1-SELESAI=== */
 const HIGHLIGHTS=[
 {group:"YouTube",platform:"yt",title:"Tips badminton — Kusuma Tangkas",desc:"Tips & teknik dari pelatih.",url:"https://www.youtube.com/@KUSUMATANGKAS",thumb:"https://unavatar.io/youtube/KUSUMATANGKAS"},
 {group:"YouTube",platform:"yt",title:"BWF — kabar resmi dunia badminton",desc:"Channel YouTube resmi BWF.",url:"https://www.youtube.com/@BWF",thumb:"https://unavatar.io/youtube/BWF"},
@@ -397,8 +393,38 @@ let STATE={ pool:[], siklus:[], sesi:[], transactions:[], galeri:[],
 settings:{tarifPartial:30000,iuranFull:100000,lokasi:'',jumlahLapangan:1,
 pbName:'PB. KABUR BADMINTON',pbKepanjangan:'',pbSlogan:''},
 tab:"dashboard", ready:false, riwayatFilter:{bulan:"",kategori:""}, sesiForm:null,
-settingsAt:0, syncAt:0, syncing:false, syncMsg:'', galeriIdx:0, hlIdx:0, spotIdx:0, wkIdx:0, siklusDraft:null, tomb:{} };
+settingsAt:0, syncAt:0, syncing:false, syncMsg:'', galeriIdx:0, hlIdx:0, spotIdx:0, wkIdx:0, siklusDraft:null };
 const AUTO_TIMERS={};
+/* ===== TOMBSTONE: biar yang dihapus tidak hidup lagi saat sinkron ===== */
+const TOMB_KEYS=['siklus','sesi','transactions','galeri'];
+let SHADOW={};
+function idsOf(k){ return new Set((Array.isArray(STATE[k])?STATE[k]:[]).map(x=>x&&x.id).filter(Boolean)); }
+function refreshShadow(){ TOMB_KEYS.forEach(k=>SHADOW[k]=idsOf(k)); }
+function detectRemoved(k){
+if(TOMB_KEYS.indexOf(k)<0) return;
+const now=idsOf(k);
+if(SHADOW[k]){
+const removed=[];
+SHADOW[k].forEach(id=>{ if(!now.has(id)) removed.push(id); });
+if(removed.length){
+if(!STATE.tomb) STATE.tomb={};
+if(!STATE.tomb[k]) STATE.tomb[k]={};
+removed.forEach(id=>{ STATE.tomb[k][id]=Date.now(); });
+}
+}
+SHADOW[k]=now;
+}
+function mergeTomb(a,b){
+const out={};
+const add=src=>{ if(!src) return; Object.keys(src).forEach(k=>{ out[k]=out[k]||{}; Object.keys(src[k]).forEach(id=>{ const t=Number(src[k][id])||0; if(!(out[k][id]>t)) out[k][id]=t; }); }); };
+add(a); add(b); return out;
+}
+function pruneTomb(tomb){
+const cut=Date.now()-1000*60*60*24*60;
+Object.keys(tomb||{}).forEach(k=>Object.keys(tomb[k]||{}).forEach(id=>{ if(Number(tomb[k][id])<cut) delete tomb[k][id]; }));
+return tomb||{};
+}
+function applyTomb(list,k,tomb){ const tb=(tomb&&tomb[k])||{}; return (list||[]).filter(x=>!tb[x.id]); }
 /* =================== Penyimpanan =================== */
 const KEYS=['pool','siklus','sesi','transactions','galeri','settings','tomb'];
 async function loadAll(){
@@ -564,6 +590,546 @@ const resume=()=>{ clearInterval(AUTO_TIMERS[railSel]); AUTO_TIMERS[railSel]=set
 rail.addEventListener('pointerdown',pause);
 rail.addEventListener('pointerup',resume);
 rail.addEventListener('scroll',()=>{ const i=Math.round(rail.scrollLeft/step()); if(i!==idx){ idx=((i%count)+count)%count; STATE[stateKey]=idx; dots.forEach((d,j)=>d.classList.toggle('on',j===idx)); } },{passive:true});
+}
+/* =================== Sorotan / Spotlight slideshow (beranda atas) =================== */
+const KOMPOSISI_COLORS={'Sewa Lapangan':'var(--gold)','Shuttlecock':'var(--violet)','Lainnya (Pengeluaran)':'var(--miss)'};
+function seededIdx(salt,n){ if(!n) return 0; const s=todayStr()+'|'+salt; let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0; return h%n; }
+function transaksiPeriodeAktif(){
+const sk=activeSiklus();
+if(!sk) return STATE.transactions;
+const sesiIds=new Set(STATE.sesi.filter(se=>se.siklusId===sk.id).map(se=>se.id));
+return STATE.transactions.filter(t=>t.siklusId===sk.id||sesiIds.has(t.sesiId));
+}
+function totalPeriodeAktif(){
+const txs=transaksiPeriodeAktif();
+const masuk=txs.filter(t=>t.jenis==='Masuk').reduce((s,t)=>s+Number(t.jumlah),0);
+const keluar=txs.filter(t=>t.jenis==='Keluar').reduce((s,t)=>s+Number(t.jumlah),0);
+return {masuk,keluar,net:masuk-keluar};
+}
+function keluarPeriodeAktif(){
+const sk=activeSiklus();
+if(!sk) return STATE.transactions.filter(t=>t.jenis==='Keluar');
+const sesiIds=new Set(STATE.sesi.filter(se=>se.siklusId===sk.id).map(se=>se.id));
+return STATE.transactions.filter(t=>t.jenis==='Keluar'&&(t.siklusId===sk.id||sesiIds.has(t.sesiId)));
+}
+function komposisiPengeluaran(){
+const txs=keluarPeriodeAktif();
+const map={};
+txs.forEach(t=>{ const k=t.kategori||'Lainnya (Pengeluaran)'; map[k]=(map[k]||0)+Number(t.jumlah||0); });
+const total=Object.values(map).reduce((a,b)=>a+b,0);
+const rows=Object.entries(map).map(([k,v])=>({kategori:k,jumlah:v,pct:total?Math.round(v/total*100):0})).sort((a,b)=>b.jumlah-a.jumlah);
+return {rows,total};
+}
+function sorotanPeriode(){
+const sk=activeSiklus();
+const sesiPeriode=sesiUrut().filter(se=>!sk||se.siklusId===sk.id);
+const totalMasuk=sesiPeriode.reduce((s,se)=>s+sesiTotals(se.id).masuk,0);
+const totalKeluar=sesiPeriode.reduce((s,se)=>s+sesiTotals(se.id).keluar,0);
+const freq={};
+sesiPeriode.forEach(se=>se.partial.forEach(p=>{ const nm=(p.nama||'').trim(); if(nm) freq[nm]=(freq[nm]||0)+1; }));
+const top=Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+return {label:sk?sk.label:'Semua periode',sesiCount:sesiPeriode.length,totalMasuk,totalKeluar,net:totalMasuk-totalKeluar,topPartial:top?{nama:top[0],kali:top[1]}:null};
+}
+function fotoPilihanHariIni(){ const g=STATE.galeri; if(!g.length) return null; return g[seededIdx('foto',g.length)]; }
+function renderSpotlightSlides(){
+const ICON_CHART='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>';
+const ICON_STAR='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9 1.2 7-6.2-3.6L5.8 21l1.2-7-5-4.9 7.1-.7L12 2Z"/></svg>';
+const ICON_CAM='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3v11H4V8Z"/><circle cx="12" cy="13.5" r="3.3"/></svg>';
+const ICON_EXT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+const komp=komposisiPengeluaran();
+const slideKomposisi=`<div class="spot-slide">
+<div class="spot-body">
+<span class="spot-tag">${ICON_CHART}Komposisi pengeluaran</span>
+<div class="spot-title">${esc(komp.total?fmtRp(komp.total):'Belum ada pengeluaran')}</div>
+<div class="spot-sub">${komp.rows.length?'Siklus berjalan · dari tab Sesi &amp; Anggota':'Belum ada pengeluaran tercatat siklus ini'}</div>
+${komp.rows.length?`<div class="spot-bar">${komp.rows.map(r=>`<i style="width:${r.pct}%;background:${KOMPOSISI_COLORS[r.kategori]||'var(--silver)'}"></i>`).join('')}</div>
+<div class="spot-legend">${komp.rows.slice(0,4).map(r=>`<div class="row"><span class="k"><i style="background:${KOMPOSISI_COLORS[r.kategori]||'var(--silver)'}"></i>${esc(r.kategori)}</span><b>${r.pct}%</b></div>`).join('')}</div>`:''}
+</div>
+</div>`;
+const sor=sorotanPeriode();
+const slideSorotan=`<div class="spot-slide">
+<div class="spot-body">
+<span class="spot-tag">${ICON_STAR}Sorotan periode ini</span>
+<div class="spot-title">${esc(sor.label)}</div>
+<div class="spot-sub">${sor.sesiCount} sesi tercatat</div>
+<div class="spot-stats">
+<div class="spot-stat-row"><span>Total masuk</span><b>${fmtRp(sor.totalMasuk)}</b></div>
+<div class="spot-stat-row"><span>Total keluar</span><b>${fmtRp(sor.totalKeluar)}</b></div>
+<div class="spot-stat-row"><span>Selisih bersih</span><b>${fmtRp(sor.net)}</b></div>
+${sor.topPartial?`<div class="spot-stat-row"><span>Partial paling rajin</span><b>${esc(sor.topPartial.nama)} · ${sor.topPartial.kali}x</b></div>`:''}
+</div>
+</div>
+</div>`;
+const pSk=activeSiklus();
+const pSesi=sesiUrut().filter(se=>!pSk||se.siklusId===pSk.id).slice(-6);
+let slidePartial='';
+if(pSesi.length){
+const pd=pSesi.map(se=>({d:se.tanggal,n:se.partial.filter(p=>(p.nama||'').trim()).length,t:se.partial.reduce((s,p)=>s+Number(p.jumlah||0),0)}));
+const maxN=Math.max(...pd.map(x=>x.n),1);
+const totN=pd.reduce((s,x)=>s+x.n,0);
+const totT=pd.reduce((s,x)=>s+x.t,0);
+slidePartial=`<div class="spot-slide">
+<div class="spot-body">
+<span class="spot-tag">${ICON_CHART}Grafik partial periode ini</span>
+<div class="spot-title">${totN} kehadiran partial</div>
+<div class="spot-sub">${esc(pSk?pSk.label:'Semua periode')} · iuran ${fmtRp(totT)}</div>
+<div class="pchart">${pd.map(x=>`<div class="pcol"><i style="height:${Math.max(8,Math.round(x.n/maxN*100))}%"></i><b>${x.n}</b><span>${dLabel(x.d)}</span></div>`).join('')}</div>
+</div>
+</div>`;
+}
+const foto=fotoPilihanHariIni();
+const slideFoto=`<div class="spot-slide">
+${foto?`<img class="spot-bg" src="${foto.dataUrl}" alt="${esc(foto.caption||'foto')}"/>`:''}
+<div class="spot-scrim"></div>
+<span class="spot-tag">${ICON_CAM}Foto pilihan</span>
+<div class="spot-panel">
+<div class="spot-title">${esc(foto?(foto.caption||dLabel(foto.tanggal||todayStr())):'Belum ada foto di galeri')}</div>
+<div class="spot-sub">${foto?'Dari galeri klub — tap tab Beranda untuk lihat semua':'Unggah foto di galeri untuk tampil di sini'}</div>
+</div>
+</div>`;
+const yts=HIGHLIGHTS.filter(h=>h.platform==='yt'); const yt=yts[seededIdx('yt',yts.length)];
+const slideYt=yt?`<div class="spot-slide">
+<img class="spot-bg" src="${yt.thumb}" alt="" onerror="this.style.display='none'"/>
+<div class="spot-scrim"></div>
+<span class="spot-tag">${ICON_YT}YouTube</span>
+<a class="spot-link" href="${yt.url}" target="_blank" rel="noopener"><span class="spot-go">${ICON_EXT}</span></a>
+<div class="spot-panel"><div class="spot-title">${esc(yt.title)}</div><div class="spot-sub">${esc(yt.desc)}</div></div>
+</div>`:'';
+const igs=HIGHLIGHTS.filter(h=>h.platform==='ig'); const ig=igs[seededIdx('ig',igs.length)];
+const slideIg=ig?`<div class="spot-slide">
+<div class="spot-ig-bg">${ICON_IG}</div>
+<img class="spot-bg" src="${ig.thumb}" alt="" onerror="this.style.display='none'"/>
+<div class="spot-scrim"></div>
+<span class="spot-tag">${ICON_IG}Instagram</span>
+<a class="spot-link" href="${ig.url}" target="_blank" rel="noopener"><span class="spot-go">${ICON_EXT}</span></a>
+<div class="spot-panel"><div class="spot-title">${esc(ig.title)}</div><div class="spot-sub">${esc(ig.desc)}</div></div>
+</div>`:'';
+const tts=HIGHLIGHTS.filter(h=>h.platform==='tt'); const tt=tts[seededIdx('tt',tts.length)];
+const slideTt=tt?`<div class="spot-slide">
+<div class="spot-ig-bg" style="background:linear-gradient(135deg,#111 0%,#25f4ee22 55%,#fe2c5533 100%);">${ICON_TT}</div>
+<img class="spot-bg" src="${tt.thumb}" alt="" onerror="this.style.display='none'"/>
+<div class="spot-scrim"></div>
+<span class="spot-tag">${ICON_TT}TikTok</span>
+<a class="spot-link" href="${tt.url}" target="_blank" rel="noopener"><span class="spot-go">${ICON_EXT}</span></a>
+<div class="spot-panel"><div class="spot-title">${esc(tt.title)}</div><div class="spot-sub">${esc(tt.desc)}</div></div>
+</div>`:'';
+return [slideKomposisi,slideSorotan,slidePartial,slideFoto,slideYt,slideIg,slideTt].filter(Boolean).join('');
+}
+/* =================== Beranda (Dashboard) =================== */
+function renderHome(today){
+const sk=activeSiklus();
+const sor=sorotanPeriode();
+const periode=totalPeriodeAktif();
+const komp=komposisiPengeluaran();
+const fotoCount=STATE.galeri.length;
+const hlGroups={};
+HIGHLIGHTS.forEach(h=>{ if(!hlGroups[h.group]) hlGroups[h.group]=[]; hlGroups[h.group].push(h); });
+const spotSlides=renderSpotlightSlides();
+const spotCount=(spotSlides.match(/class="spot-slide"/g)||[]).length;
+let galleryHTML='';
+if(fotoCount||true){
+const slides=STATE.galeri.map(g=>`<div class="gslide"><img src="${g.dataUrl}" alt="${esc(g.caption||'foto')}"/><button class="gdel" data-del-foto="${g.id}">✕</button>${g.caption?`<div class="gcap">${esc(g.caption)}</div>`:''}</div>`).join('');
+const dots=fotoCount>1?`<div class="dots-mini" id="galeri-dots">${STATE.galeri.map((_,i)=>`<i class="${i===0?'on':''}"></i>`).join('')}</div>`:'';
+galleryHTML=`<div class="card">
+<div class="railhead"><span class="rt">Galeri</span><span class="rs">${fotoCount} foto</span></div>
+<div class="rail" id="galeri-rail">${slides}
+<div class="upload-tile" id="btn-upload-foto"><span style="font-size:26px;">📷</span> Unggah foto</div></div>${dots}
+<input type="file" id="file-foto" accept="image/*" multiple style="position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;"/>
+</div>`;
+}
+const hlGroupsHTML=Object.entries(hlGroups).map(([group,list])=>{
+const icon=group==='YouTube'?ICON_YT:group==='Instagram'?ICON_IG:ICON_TT;
+return `<div class="hlgroup">
+<div class="hgt">${group}</div>
+${list.map(h=>`<a class="hl-card" href="${h.url}" target="_blank" rel="noopener">
+<div class="hl-thumb ${h.platform}">
+<img src="${h.thumb}" alt="" onerror="this.style.display='none'"/>
+<span class="plat">${icon}</span></div>
+<div><div class="hl-t">${esc(h.title)}</div><div class="hl-d">${esc(h.desc)}</div></div>
+<span class="hl-go">↗</span></a>`).join('')}</div>`;
+}).join('');
+const selisih=periode.net;
+const selClass=selisih>=0?'up':'down';
+return `
+<div class="hero" style="overflow:hidden;">
+${COURT_SVG}
+<div style="position:relative;z-index:1;">
+<div class="rail" id="spot-rail">${spotSlides}</div>
+${spotCount>1?`<div class="dots-mini" id="spot-dots">${Array.from({length:spotCount},(_,i)=>`<i class="${i===0?'on':''}"></i>`).join('')}</div>`:''}
+</div></div>
+<div class="duo">
+<div class="tile"><div class="l">Total masuk periode</div><div class="v num up">${fmtRp(periode.masuk)}</div></div>
+<div class="tile"><div class="l">Total keluar periode</div><div class="v num down">${fmtRp(periode.keluar)}</div></div>
+</div>
+<div class="card"><div class="line"><span class="k">Selisih bersih periode</span><span class="v num ${selClass}">${fmtRp(selisih)}</span></div>
+<div class="line"><span class="k">Sesi tercatat</span><span class="v num">${sor.sesiCount}</span></div>
+${sor.topPartial?`<div class="line"><span class="k">Partial paling rajin</span><span class="v">${esc(sor.topPartial.nama)} · ${sor.topPartial.kali}x</span></div>`:''}</div>
+<div class="social-cta">
+<div class="scta-head">
+<div class="scta-title">Dukung PB Kabur Badminton! 🏸</div>
+<div class="scta-sub">Follow sosial media resmi klub — biar nggak ketinggalan kabar, foto, dan momen seru tap sesi.</div>
+</div>
+<a class="scta-btn ig-btn" href="https://www.instagram.com/pbkaburbadminton/" target="_blank" rel="noopener">
+<div class="scta-ic">${ICON_IG}</div>
+<div class="scta-info"><div class="scta-nm">Instagram Klub</div><div class="scta-akun">@pbkaburbadminton</div></div>
+<span class="scta-follow">+ Follow</span></a>
+<a class="scta-btn tt-btn" href="https://www.tiktok.com/@pbkaburbadminton" target="_blank" rel="noopener">
+<div class="scta-ic">${ICON_TT}</div>
+<div class="scta-info"><div class="scta-nm">TikTok Klub</div><div class="scta-akun">@pbkaburbadminton</div></div>
+<span class="scta-follow">+ Follow</span></a>
+<div class="scta-footer">Satu follow kamu = semangat buat klub kita! 🤍</div>
+</div>
+${galleryHTML}
+<div class="card"><h3>Highlight &amp; tautan</h3><div class="csub">Channel &amp; akun seputar badminton.</div>${hlGroupsHTML||'<div class="empty">Belum ada tautan.</div>'}</div>`;
+}
+/* =================== Sesi (input) =================== */
+function newSesiForm(){
+const sk=activeSiklus();
+return { tanggal: todayStr(), lokasi: (sk&&sk.lokasi)||STATE.settings.lokasi,
+hadirFull:[], partial:[{nama:'',jumlah:STATE.settings.tarifPartial},{nama:'',jumlah:STATE.settings.tarifPartial},{nama:'',jumlah:STATE.settings.tarifPartial}],
+biaya:[],
+masukLain:[] };
+}
+function newCalcTambahan(){ return {lokasi:'',tanggal:todayStr(),hargaLapangan:0,durasi:'',jumlahOrang:0,hargaShuttlecock:0}; }
+function renderSesiForm(){
+if(!STATE.sesiForm) STATE.sesiForm=newSesiForm();
+const f=STATE.sesiForm;
+const partialTerisi=f.partial.filter(p=>p.nama.trim()).length;
+const partialFee=f.partial.filter(p=>p.nama.trim()).reduce((s,p)=>s+(Number(p.jumlah)||0),0);
+const biayaTotal=f.biaya.reduce((s,b)=>s+(Number(b.jumlah)||0),0);
+const masukLainTotal=f.masukLain.reduce((s,b)=>s+(Number(b.jumlah)||0),0);
+const totalMasuk=partialFee+masukLainTotal;
+const netSesi=totalMasuk-biayaTotal;
+const kasSebelum=saldoTotal();
+const hadirFullTerisi=f.hadirFull.filter(h=>h.nama.trim()).length;
+const skAktifSF=activeSiklus();
+const memberCourtsSF=skAktifSF?(skAktifSF.lapanganMember||[]):[];
+const fullRosterSF=skAktifSF?skAktifSF.full.map(x=>(x.nama||'').trim()).filter(Boolean):[];
+const takenHF=new Set(f.hadirFull.map(h=>h.nama).filter(Boolean));
+return `
+${poolDatalist()}
+<div class="slabel">Catat sesi main (Sabtu rutin)</div>
+<div class="note">Member partial berbeda tiap minggu — catat di bawah. Iuran &amp; lapangan member dikelola per siklus di tab Anggota, jadi tidak perlu diisi ulang tiap minggu.</div>
+<div class="card">
+<div class="field"><label>Tanggal</label><input id="sf-tanggal" type="date" value="${f.tanggal}"/></div>
+<div class="field"><label>Lokasi</label><input id="sf-lokasi" type="text" placeholder="Nama GOR" value="${esc(f.lokasi)}"/></div>
+${memberCourtsSF.length?`<div class="tiny" style="margin-top:10px;">Lapangan member siklus ini: ${memberCourtsSF.map(c=>`${esc(c.noLapangan||'Lapangan')} (${esc(c.jam||'jam belum diisi')})`).join(', ')}. Sudah dibayar untuk seluruh siklus — tidak perlu dicatat ulang di sini.</div>`
+:`<div class="tiny" style="margin-top:10px;">Belum ada lapangan member untuk siklus berjalan. Atur di tab Anggota.</div>`}
+</div>
+<div class="card">
+<h3>Member full hadir</h3>
+<div class="csub">Pilih dari roster member full siklus ini — tidak bisa ketik manual, biar nggak nyasar ke nama partial.</div>
+${fullRosterSF.length?`
+<div id="hfull-rows">${f.hadirFull.map((h,i)=>`<div class="slotrow" data-hfrow="${i}">
+<select style="flex:1;" data-hfnama="${i}">
+<option value="">— pilih nama —</option>
+${fullRosterSF.map(nm=>`<option value="${esc(nm)}" ${nm===h.nama?'selected':''} ${nm!==h.nama&&takenHF.has(nm)?'disabled':''}>${esc(nm)}</option>`).join('')}
+</select>
+<button type="button" class="iconbtn" data-hfdel="${i}">✕</button>
+</div>`).join('')}</div>
+<button type="button" class="btn btn-ghost" id="btn-hfull-add">+ Tambah anggota full hadir</button>`
+:`<div class="tiny">Belum ada roster member full untuk siklus berjalan — atur dulu di tab Anggota.</div>`}
+<div class="tiny" style="margin-top:10px;">${hadirFullTerisi} anggota full tercatat hadir.</div>
+</div>
+<div class="card">
+<h3>Member partial hadir</h3>
+<div class="csub">Rp${fmtNum(STATE.settings.tarifPartial)}/sesi. Kosongkan slot yang tidak dipakai.</div>
+<div id="partial-rows">${f.partial.map((p,i)=>`<div class="slotrow" data-prow="${i}">
+<input type="text" list="dl-pool" placeholder="Nama ${i+1}" data-pnama="${i}" value="${esc(p.nama)}"/>
+<span class="fee num">Rp${fmtNum(p.jumlah)}</span>
+<button type="button" class="iconbtn" data-pdel="${i}">✕</button>
+</div>`).join('')}</div>
+<button type="button" class="btn btn-ghost" id="btn-partial-add">+ Tambah slot partial</button>
+<div class="tiny" style="margin-top:10px;">${partialTerisi} orang terisi · iuran partial ${fmtRp(partialFee)}</div>
+</div>
+<div class="card">
+<h3>Biaya operasional</h3>
+<div class="csub">Shuttlecock atau lapangan tambahan (non-member) di luar lapangan member siklus — jam &amp; jenisnya dicatat lewat form, bukan lewat keterangan.</div>
+<div id="biaya-rows">${f.biaya.map((b,i)=>`
+<div class="dynrow" data-brow="${i}"><select class="grow" data-bkat="${i}">${KATEGORI_KELUAR.map(k=>`<option ${k===b.kategori?'selected':''}>${k}</option>`).join('')}</select></div>
+${b.kategori==='Sewa Lapangan'?`<div class="sub-fields">
+<div class="sf-item"><label>Jenis lapangan</label><select data-bjenis="${i}">${JENIS_LAP.map(j=>`<option ${j===b.jenisLapangan?'selected':''}>${j}</option>`).join('')}</select></div>
+<div class="sf-item"><label>No. lapangan</label><input type="text" placeholder="mis. Lapangan 2" data-bno="${i}" value="${esc(b.noLapangan||'')}"/></div>
+<div class="sf-item" style="grid-column:1/-1;"><label>Jam main</label><input type="text" placeholder="mis. 10.00-12.00" data-bjam="${i}" value="${esc(b.jam||'')}"/></div>
+</div>`:''}
+<div class="dynrow" data-brow2="${i}"><input class="grow" type="text" placeholder="Keterangan" data-bket="${i}" value="${esc(b.keterangan)}"/></div>
+<div class="dynrow" data-brow3="${i}" style="margin-bottom:14px;">${moneyField(`data-bjml="${i}"`,b.jumlah,true)}<button type="button" class="iconbtn" data-bdel="${i}">✕</button></div>
+`).join('')}</div>
+<button type="button" class="btn btn-ghost" id="btn-biaya-add">+ Tambah biaya / lapangan tambahan</button>
+</div>
+<div class="card">
+<h3>Pemasukan lain</h3>
+<div class="csub">Opsional — sponsor, sisa DP, dll (di luar iuran).</div>
+<div id="masuk-rows">${f.masukLain.map((b,i)=>`
+<div class="dynrow" data-mrow="${i}"><input class="grow" type="text" placeholder="Keterangan" data-mket="${i}" value="${esc(b.keterangan)}"/></div>
+<div class="dynrow" data-mrow2="${i}" style="margin-bottom:14px;">${moneyField(`data-mjml="${i}"`,b.jumlah,true)}<button type="button" class="iconbtn" data-mdel="${i}">✕</button></div>
+`).join('')}</div>
+<button type="button" class="btn btn-ghost" id="btn-masuk-add">+ Tambah pemasukan lain</button>
+</div>
+<div class="card">
+<h3>Ringkasan sesi</h3>
+<div class="line"><span class="k">Kas sebelum sesi ini</span><span class="v num">${fmtRp(kasSebelum)}</span></div>
+<div class="line"><span class="k">Total pemasukan</span><span class="v num up">${fmtRp(totalMasuk)}</span></div>
+<div class="line"><span class="k">Total pengeluaran</span><span class="v num down">${fmtRp(biayaTotal)}</span></div>
+<div class="line"><span class="k">Kas setelah sesi ini</span><span class="v num ${(kasSebelum+netSesi)>=0?'up':'down'}">${fmtRp(kasSebelum+netSesi)}</span></div>
+</div>
+<button class="btn btn-gold" id="btn-simpan-sesi" style="margin-top:2px;">Simpan sesi</button>
+${renderCalcTambahan()}`;
+}
+/* =================== Kalkulator jadwal tambahan (di luar Sabtu) =================== */
+function renderCalcTambahan(){
+if(!STATE.calcTambahan) STATE.calcTambahan=newCalcTambahan();
+const c=STATE.calcTambahan;
+const total=(Number(c.hargaLapangan)||0)+(Number(c.hargaShuttlecock)||0);
+const orang=Number(c.jumlahOrang)||0;
+const perOrang=orang>0?total/orang:0;
+return `
+<div class="slabel">Jadwal tambahan (di luar Sabtu)</div>
+<div class="note info">Untuk main dadakan di luar jadwal rutin Sabtu. Biaya dipatungan langsung antar yang hadir dan tidak masuk ke kas klub — form ini hanya kalkulator pembagian per orang.</div>
+<div class="card">
+<div class="duo-f">
+<div class="field"><label>Lokasi lapangan</label><input id="ct-lokasi" type="text" placeholder="Nama GOR" value="${esc(c.lokasi)}"/></div>
+<div class="field"><label>Tanggal</label><input id="ct-tanggal" type="date" value="${c.tanggal}"/></div>
+</div>
+<div class="duo-f">
+<div class="field"><label>Harga lapangan</label>${moneyField('id="ct-harga"',c.hargaLapangan,true)}</div>
+<div class="field"><label>Durasi main</label><input id="ct-durasi" type="text" placeholder="mis. 2 jam" value="${esc(c.durasi)}"/></div>
+</div>
+<div class="duo-f">
+<div class="field"><label>Orang hadir</label><input id="ct-orang" type="text" inputmode="numeric" placeholder="0" value="${c.jumlahOrang||''}"/></div>
+<div class="field"><label>Harga shuttlecock</label>${moneyField('id="ct-shuttle"',c.hargaShuttlecock,true)}</div>
+</div>
+<div class="line"><span class="k">Total biaya</span><span class="v num">${fmtRp(total)}</span></div>
+<div class="line"><span class="k">Ideal per orang${orang?` (${orang} orang)`:''}</span><span class="v num up">${orang?fmtRp(perOrang):'—'}</span></div>
+${orang?'':'<div class="tiny" style="margin-top:6px;">Isi jumlah orang hadir untuk melihat pembagian per orang.</div>'}
+</div>`;
+}
+/* =================== Riwayat =================== */
+function renderRiwayat(){
+const urut=[...sesiUrut()].reverse();
+const f=STATE.riwayatFilter;
+const months=[...new Set(STATE.transactions.map(t=>t.tanggal.slice(0,7)))].sort().reverse();
+const kats=['Iuran Full','Iuran Partial',...KATEGORI_KELUAR,'Lainnya (Pemasukan)'];
+let list=[...STATE.transactions].sort((a,b)=>b.tanggal.localeCompare(a.tanggal)||(b.createdAt||0)-(a.createdAt||0));
+if(f.bulan) list=list.filter(t=>t.tanggal.slice(0,7)===f.bulan);
+if(f.kategori) list=list.filter(t=>t.kategori===f.kategori);
+const tot={masuk:list.filter(t=>t.jenis==='Masuk').reduce((s,t)=>s+Number(t.jumlah),0),
+keluar:list.filter(t=>t.jenis==='Keluar').reduce((s,t)=>s+Number(t.jumlah),0)};
+return `
+<div class="railhead"><span class="rt">Riwayat sesi</span><span class="rs">Geser untuk lihat semua</span></div>
+<div class="rail">${urut.length?urut.map(se=>{
+const t=sesiTotals(se.id);
+return `<div class="scard">
+<div class="sd">${dLabelFull(se.tanggal)}</div>
+<div class="sl">${esc(se.lokasi)} · ${se.hadirFull.length+se.partial.length} hadir</div>
+<div class="srow"><span>Masuk</span><b class="num up">${fmtRp(t.masuk)}</b></div>
+<div class="srow"><span>Keluar</span><b class="num down">${fmtRp(t.keluar)}</b></div>
+<div class="srow"><span>Kas setelahnya</span><b class="num">${fmtRp(saldoSampai(se.tanggal))}</b></div>
+<button type="button" class="btn btn-ghost btn-sm" data-hapus-sesi="${se.id}" style="margin-top:10px;">Hapus sesi</button>
+</div>`;
+}).join(''):`<div class="empty" style="width:100%;">Belum ada sesi.</div>`}</div>
+<div class="filters">
+<select id="rf-bulan"><option value="">Semua bulan</option>${months.map(mo=>`<option value="${mo}" ${mo===f.bulan?'selected':''}>${moLabelPanjang(mo)}</option>`).join('')}</select>
+<select id="rf-kategori"><option value="">Semua kategori</option>${kats.map(k=>`<option ${k===f.kategori?'selected':''}>${k}</option>`).join('')}</select>
+</div>
+<div class="duo">
+<div class="tile"><div class="l">Pemasukan</div><div class="v num up">${fmtRp(tot.masuk)}</div></div>
+<div class="tile"><div class="l">Pengeluaran</div><div class="v num down">${fmtRp(tot.keluar)}</div></div>
+</div>
+<div class="card">
+${list.length===0?`<div class="empty">Tidak ada transaksi pada filter ini.</div>`:list.map(t=>`<div class="tx">
+<div><div class="ket">${esc(t.keterangan||t.kategori)}</div>
+<div class="meta">${t.tanggal}${t.nama?' · '+esc(t.nama):''} · ${esc(t.kategori)}</div></div>
+<div style="display:flex;align-items:center;">
+<div class="amt ${t.jenis==='Masuk'?'in':'out'} num">${t.jenis==='Masuk'?'+':'−'}${fmtRp(t.jumlah)}</div>
+<button class="del" data-id="${t.id}" aria-label="Hapus transaksi">✕</button>
+</div></div>`).join('')}
+</div>`;
+}
+/* =================== Anggota (pool + siklus) =================== */
+function renderAnggotaTotalTable(){
+const skAktif=activeSiklus();
+const fulls=(skAktif?skAktif.full:[]).filter(f=>(f.nama||'').trim())
+.map(f=>f.nama.trim()).sort((a,b)=>a.localeCompare(b));
+const fullNames=new Set(fulls);
+const sesiAktif=sesiUrut().filter(se=>skAktif?se.siklusId===skAktif.id:true);
+const partialSet=new Set();
+sesiAktif.forEach(se=>se.partial.forEach(p=>{ const nm=(p.nama||'').trim(); if(nm && !fullNames.has(nm)) partialSet.add(nm); }));
+const partials=[...partialSet].sort((a,b)=>a.localeCompare(b));
+const total=fulls.length+partials.length;
+return `
+<div class="slabel">Total anggota keseluruhan</div>
+<div class="card">
+<h3>${skAktif?esc(skAktif.label):'Belum ada siklus aktif'}</h3>
+<div class="csub">${total} anggota · ${fulls.length} full, ${partials.length} partial</div>
+${total?`<div class="attend-cols">
+<div class="attend-col">
+<div class="attend-chead">Full · ${fulls.length}</div>
+${fulls.length?fulls.map(nm=>`<div class="attend-r"><span class="nm">${esc(nm)}</span><span class="badge full">Full</span></div>`).join(''):`<div class="tiny">Belum ada.</div>`}
+</div>
+<div class="attend-col">
+<div class="attend-chead">Partial · ${partials.length}</div>
+${partials.length?partials.map(nm=>`<div class="attend-r"><span class="nm">${esc(nm)}</span><span class="badge partial">Partial</span></div>`).join(''):`<div class="tiny">Belum ada.</div>`}
+</div>
+</div>`:`<div class="empty">Belum ada anggota tercatat.</div>`}
+<div class="tiny" style="margin-top:12px;">Full = roster siklus berjalan (tetap tercatat walau tidak selalu hadir, karena sudah kontribusi lapangan member). Partial = gabungan nama yang pernah hadir per sesi. Otomatis mengikuti siklus begitu siklus baru dimulai — riwayat siklus lama tetap tersimpan di bagian "Siklus keanggotaan" di bawah.</div>
+</div>`;
+}
+function renderPartialMingguan(){
+const skAktif=activeSiklus();
+const sesiAktif=[...sesiUrut().filter(se=>skAktif?se.siklusId===skAktif.id:true)].reverse();
+if(!sesiAktif.length) return '';
+return `
+<div class="railhead"><span class="rt">Partial per minggu</span><span class="rs">${sesiAktif.length} sesi · geser →</span></div>
+<div class="rail" id="wk-rail">
+${sesiAktif.map(se=>{
+const partials=se.partial.filter(p=>(p.nama||'').trim());
+return `<div class="scard wk-slide">
+<div class="sd">${dLabelFull(se.tanggal)}</div>
+<div class="sl">${partials.length} member partial hadir</div>
+<div style="margin-top:8px;">
+${partials.length?partials.map(p=>`<div class="attend-r"><span class="nm">${esc(p.nama)}</span><span class="badge partial">Partial</span></div>`).join(''):`<div class="tiny">Tidak ada member partial minggu ini.</div>`}
+</div>
+</div>`;
+}).join('')}
+</div>
+${sesiAktif.length>1?`<div class="dots-mini" id="wk-dots">${sesiAktif.map((_,i)=>`<i class="${i===0?'on':''}"></i>`).join('')}</div>`:''}
+<div class="tiny" style="margin:4px 4px 16px;">Diambil otomatis dari kehadiran partial yang dicatat di tab Sesi tiap minggu — ganti minggu dengan geser ke samping.</div>`;
+}
+function renderAnggota(){
+const sk=siklusUrut();
+return `
+${poolDatalist()}
+${renderAnggotaTotalTable()}
+${renderPartialMingguan()}
+<div class="slabel">Siklus keanggotaan (full)</div>
+<div class="note info">Satu siklus ≈ 4x main (bukan bulan kalender). Roster anggota full bisa beda tiap siklus — isi slotnya sendiri. Nama siklus mengikuti bulan &amp; tahun mulainya secara otomatis.</div>
+<div class="card">
+${sk.length? sk.slice().reverse().map(s=>{
+const info=siklusLunasInfo(s);
+const lm=s.lapanganMember||[];
+return `<div class="siklus-card" data-sk="${s.id}">
+<div class="sh"><span class="st">${esc(s.label)}</span><span class="tag ${info.belum===0&&info.total>0?'ok':'watch'}">${info.lunas}/${info.total} lunas</span></div>
+<div class="field" style="margin-top:8px;"><label>Mulai siklus</label><input type="date" data-sk-mulai="${s.id}" value="${s.mulai}"/></div>
+<div class="field"><label>Lokasi lapangan siklus ini</label><input type="text" placeholder="Nama GOR" data-sk-lokasi="${s.id}" value="${esc(s.lokasi||'')}"/></div>
+<div class="slabel" style="margin:14px 2px 8px;">Lapangan member (terkunci)</div>
+<div class="lm-rows">${lm.length?lm.map(c=>`<div class="lock-row" data-lm="${c.id}">
+<div class="lm-grid">
+<div class="lm-field"><label>No. Lapangan</label><input type="text" class="lnama" placeholder="mis. Lapangan 3" data-lmno="${c.id}" value="${esc(c.noLapangan||'')}"/></div>
+<div class="lm-field"><label>Jam</label><input type="text" class="ljam" placeholder="mis. 09.00-12.00" data-lmjam="${c.id}" value="${esc(c.jam||'')}"/></div>
+</div>
+<div class="lm-bottom">
+<div class="lm-field"><label>Biaya</label>${moneyField(`data-lmjml="${c.id}"`,c.biaya,true)}</div>
+<button type="button" class="iconbtn" data-lm-del="${c.id}" aria-label="Hapus lapangan member">✕</button>
+</div>
+</div>`).join(''):`<div class="tiny">Belum ada lapangan member untuk siklus ini.</div>`}</div>
+<button type="button" class="btn btn-ghost btn-sm" data-lm-add="${s.id}" style="margin-top:2px;">+ Tambah lapangan member</button>
+<div class="tiny" style="margin:8px 0 2px;">Lapangan yang sudah dikonfirmasi dianggap sudah dibayar &amp; terkunci untuk siklus ini — biasanya hanya bisa ditambah, bukan dikurangi. Tombol ✕ hanya untuk membetulkan salah input, dan akan meminta konfirmasi dulu sebelum menghapus (transaksi terkait ikut terhapus).</div>
+<div class="slabel" style="margin:16px 2px 8px;">Roster anggota full</div>
+<div class="sk-slots">${s.full.map(fm=>`<div class="slotrow" data-slot="${fm.id}">
+<input type="text" list="dl-pool" placeholder="Nama" data-slotnama="${fm.id}" value="${esc(fm.nama)}"/>
+${moneyField(`data-slotjml="${fm.id}"`,fm.jumlah,true)}
+<label style="display:flex;align-items:center;gap:5px;flex:none;">
+<input type="checkbox" data-slotlunas="${fm.id}" ${fm.lunas?'checked':''}/>
+</label>
+<button type="button" class="iconbtn" data-slotdel="${fm.id}">✕</button>
+</div>`).join('')}</div>
+<button type="button" class="btn btn-ghost btn-sm" data-slot-add="${s.id}" style="margin-top:4px;">+ Slot anggota</button>
+<button type="button" class="btn btn-ghost btn-sm" data-sk-del="${s.id}" style="margin-top:4px;margin-left:8px;">Hapus siklus</button>
+</div>`;
+}).join('') : `<div class="empty">Belum ada siklus.</div>`}
+${STATE.siklusDraft?renderSiklusDraft(STATE.siklusDraft):`<button class="btn btn-onyx" id="btn-siklus-baru" style="margin-top:4px;">+ Mulai siklus baru</button>`}
+</div>
+<div class="slabel">Daftar nama (untuk saran otomatis)</div>
+<div class="card">
+<div class="field"><label>Tambah nama baru</label><input id="pool-nama" type="text" placeholder="Nama anggota"/></div>
+<button class="btn btn-onyx" id="btn-pool-add" style="margin-top:2px;">Tambah ke daftar nama</button>
+<div class="namechip" style="margin-top:14px;">
+${STATE.pool.map(n=>`<span class="nc"><i style="background:var(--muted)"></i>${esc(n)} <button type="button" data-pool-del="${esc(n)}" style="color:var(--miss-ink);font-weight:800;margin-left:2px;">✕</button></span>`).join('')}
+</div>
+</div>`;
+}
+function renderSiklusDraft(d){
+const statusLabel={full:'Lanjut Full',partial:'Jadi Partial',berhenti:'Tidak lanjut'};
+return `<div class="siklus-card" style="border:1px dashed var(--line,#ccc);">
+<div class="sh"><span class="st">Konfirmasi siklus baru</span></div>
+<div class="note info" style="margin-top:8px;">Cek satu per satu: anggota siklus lalu lanjut jadi full member lagi, turun jadi partial (bayar per sesi), atau berhenti. Anggota yang "Jadi Partial"/"Tidak lanjut" TIDAK dimasukkan ke roster full siklus baru.</div>
+<div class="field" style="margin-top:8px;"><label>Mulai siklus</label><input type="date" id="draft-mulai" value="${d.mulai}"/></div>
+<div class="slabel" style="margin:12px 2px 8px;">Anggota siklus sebelumnya</div>
+<div class="draft-rows">${d.entries.length?d.entries.map((e,i)=>`<div class="slotrow" data-draft-row="${i}" style="flex-wrap:wrap;">
+<span style="flex:1 1 100%;font-weight:700;">${esc(e.nama)}</span>
+<select data-draft-status="${i}" style="flex:1;">
+${['full','partial','berhenti'].map(v=>`<option value="${v}" ${e.status===v?'selected':''}>${statusLabel[v]}</option>`).join('')}
+</select>
+</div>`).join(''):`<div class="tiny">Belum ada anggota di siklus sebelumnya — semua anggota di bawah ini baru.</div>`}</div>
+<div class="field" style="margin-top:10px;"><label>+ Tambah anggota full baru (opsional, pisahkan dengan koma)</label><input type="text" id="draft-baru" placeholder="mis. Budi, Sari"/></div>
+<div style="display:flex;gap:8px;margin-top:12px;">
+<button class="btn btn-onyx" id="btn-siklus-draft-confirm">Konfirmasi &amp; buat siklus</button>
+<button class="btn btn-ghost" id="btn-siklus-draft-batal">Batal</button>
+</div>
+</div>`;
+}
+/* =================== Pengaturan (tab tersendiri) =================== */
+function renderPengaturan(){
+return `
+<div class="slabel">Identitas klub</div>
+<div class="card">
+<div class="field"><label>Nama PB</label><input id="s-pbName" type="text" value="${esc(STATE.settings.pbName)}"/></div>
+<div class="field"><label>Kepanjangan</label><input id="s-pbKepanjangan" type="text" value="${esc(STATE.settings.pbKepanjangan)}"/></div>
+<div class="field"><label>Slogan</label><input id="s-pbSlogan" type="text" value="${esc(STATE.settings.pbSlogan)}"/></div>
+</div>
+<div class="slabel">Tarif iuran</div>
+<div class="note">Pengaturan lapangan (lokasi &amp; lapangan member) kini dikelola per siklus di tab Anggota, karena lokasi dan lapangan yang dipakai bisa berbeda tiap siklus.</div>
+<div class="card">
+<div class="field"><label>Iuran per siklus — member full</label>${moneyField('id="s-iuranFull"',STATE.settings.iuranFull)}</div>
+<div class="field"><label>Iuran per sesi — member partial</label>${moneyField('id="s-tarifPartial"',STATE.settings.tarifPartial)}</div>
+<button class="btn btn-gold" id="btn-simpan-pengaturan" style="margin-top:2px;">Simpan pengaturan</button>
+</div>
+${renderSyncCard()}
+<div class="slabel">Data</div>
+<div class="card">
+<div class="csub">${MODE_MANDIRI
+? 'Data tersimpan di browser perangkat ini. Aktifkan sinkron online di atas, atau gunakan ekspor Excel sebagai cadangan.'
+: 'Transaksi dan pengaturan tersimpan bersama antar perangkat.'}</div>
+<button class="btn btn-onyx" id="btn-export">Unduh sebagai file Excel</button>
+<div class="tiny" style="margin-top:9px;margin-bottom:16px;">Berisi Pengaturan, Siklus Keanggotaan, Rekap Mingguan, dan satu sheet per sesi.</div>
+<label class="btn btn-ghost" for="file-import" id="btn-import-label" style="display:block;text-align:center;">Impor dari file Excel…</label>
+<input type="file" id="file-import" accept=".xlsx" style="position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;"/>
+<div class="tiny" style="margin-top:9px;margin-bottom:16px;">Mengganti seluruh data dengan isi file. Unduh cadangan dulu bila perlu.</div>
+<button class="btn btn-ghost" id="btn-reseed">Pulihkan data contoh (Juli 2026)</button>
+</div>`;
+}
+/* =================== Galeri: kompresi foto =================== */
+function compressImage(file){
+return new Promise((resolve,reject)=>{
+const reader=new FileReader();
+reader.onload=()=>{
+const img=new Image();
+img.onload=()=>{
+const maxW=900;
+const scale=Math.min(1,maxW/img.width);
+const w=Math.round(img.width*scale), h=Math.round(img.height*scale);
+const cv=document.createElement('canvas'); cv.width=w; cv.height=h;
+const ctx=cv.getContext('2d'); ctx.drawImage(img,0,0,w,h);
+resolve(cv.toDataURL('image/jpeg',0.65));
+};
+img.onerror=reject;
+img.src=reader.result;
+};
+reader.onerror=reject;
+reader.readAsDataURL(file);
+});
+}
+async function handleFotoFiles(files){
+for(const file of files){
+try{
+const dataUrl=await compressImage(file);
+STATE.galeri.push({id:'g-'+uid(),dataUrl,caption:'',tanggal:todayStr(),createdAt:Date.now()});
+}catch(e){ console.error(e); }
+}
+STATE.galeri.sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+if(STATE.galeri.length>12) STATE.galeri=STATE.galeri.slice(0,12);
+await saveKey('galeri'); render(); toast('Foto ditambahkan.');
 }
 /* =================== Handlers =================== */
 function attachTabHandlers(){
@@ -989,8 +1555,7 @@ const s=String(v||'').trim(); const m=/^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(s);
 if(m) return `${m[1]}-${pad(Number(m[2]))}-${pad(Number(m[3]))}`;
 return null;
 }
-/* ====== Impor dari Excel rekap manual klub ====== */
-function colLetter(n){ let s=''; while(n>0){ const m=(n-1)%26; s=String.fromCharCode(65+m)+s; n=Math.floor((n-1)/26); } return s; }
+/* ====== Impor dari Excel rekap manual klub (format "Tot. Kehadiran Pemain" + "Rekap Biaya Op") ====== */
 function cellRC(ws,r,c){ return cellRaw(ws,colLetter(c)+r); }
 function cellStrRC(ws,r,c){ const v=cellRC(ws,r,c); return v==null?'':String(v).trim(); }
 function cellDateRC(ws,r,c){ return cellDate(ws,colLetter(c)+r); }
@@ -1209,7 +1774,6 @@ hasil.transactions.push({id:'imp-t-'+n,createdAt:n,tanggal:sk.mulai,jenis:'Masuk
 return hasil;
 }
 window.__parseWorkbook=parseWorkbook;
-window.__doImport=doImport;
 async function doImport(file){
 if(!file) return;
 const btn=root.querySelector('#btn-import-label'); const asli=btn?btn.textContent:'';
@@ -1228,6 +1792,7 @@ toast(`${h.sesi.length} sesi berhasil diimpor.`);
 }catch(e){ console.error(e); toast(e && e.message==='load' ? 'Gagal memuat pustaka Excel.' : 'File tidak terbaca. Pastikan formatnya .xlsx.'); }
 finally{ if(btn) btn.textContent=asli||'Impor dari file Excel…'; }
 }
+window.__doImport=doImport;
 /* =================== Sinkronisasi Supabase =================== */
 const SYNC_KEY='kbr:sync';
 let SYNC={url:'',key:'',code:'',on:false};
@@ -1252,36 +1817,6 @@ const map=new Map();
 (remote||[]).forEach(x=>{ const cur=map.get(x[idKey]); if(!cur||Number(x.updatedAt||x.createdAt||0)>Number(cur.updatedAt||cur.createdAt||0)) map.set(x[idKey],x); });
 return [...map.values()];
 }
-/* ===== TOMBSTONE: biar yang dihapus tidak hidup lagi saat sinkron ===== */
-const TOMB_KEYS=['siklus','sesi','transactions','galeri'];
-let SHADOW={};
-function idsOf(k){ return new Set((Array.isArray(STATE[k])?STATE[k]:[]).map(x=>x&&x.id).filter(Boolean)); }
-function refreshShadow(){ TOMB_KEYS.forEach(k=>SHADOW[k]=idsOf(k)); }
-function detectRemoved(k){
-if(TOMB_KEYS.indexOf(k)<0) return;
-const now=idsOf(k);
-if(SHADOW[k]){
-const removed=[];
-SHADOW[k].forEach(id=>{ if(!now.has(id)) removed.push(id); });
-if(removed.length){
-if(!STATE.tomb) STATE.tomb={};
-if(!STATE.tomb[k]) STATE.tomb[k]={};
-removed.forEach(id=>{ STATE.tomb[k][id]=Date.now(); });
-}
-}
-SHADOW[k]=now;
-}
-function mergeTomb(a,b){
-const out={};
-const add=src=>{ if(!src) return; Object.keys(src).forEach(k=>{ out[k]=out[k]||{}; Object.keys(src[k]).forEach(id=>{ const t=Number(src[k][id])||0; if(!(out[k][id]>t)) out[k][id]=t; }); }); };
-add(a); add(b); return out;
-}
-function pruneTomb(tomb){
-const cut=Date.now()-1000*60*60*24*60;
-Object.keys(tomb||{}).forEach(k=>Object.keys(tomb[k]||{}).forEach(id=>{ if(Number(tomb[k][id])<cut) delete tomb[k][id]; }));
-return tomb||{};
-}
-function applyTomb(list,k,tomb){ const tb=(tomb&&tomb[k])||{}; return (list||[]).filter(x=>!tb[x.id]); }
 function mergeState(remote){
 const tomb=pruneTomb(mergeTomb(STATE.tomb,remote&&remote.tomb));
 let out;
@@ -1416,33 +1951,31 @@ setInterval(()=>{ if(!document.hidden) syncNow(true); },45000);
 })();
 </script>
 <style>
-#floating-importer{position:fixed;z-index:999999;width:56px;height:56px;border-radius:50%;
+#floating-importer{position:fixed;z-index:999999;width:60px;height:60px;border-radius:50%;
 background:linear-gradient(135deg,#FFD700 0%,#D4AF37 100%);box-shadow:0 4px 15px rgba(0,0,0,.4);
-display:flex;align-items:center;justify-content:center;font-size:26px;color:#111;
-user-select:none;touch-action:none;cursor:grab;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));}
+display:flex;align-items:center;justify-content:center;font-size:30px;color:#111;
+user-select:none;touch-action:none;cursor:grab;transition:opacity .3s ease;
+right:20px;bottom:calc(80px + env(safe-area-inset-bottom));}
 </style>
 <div id="floating-importer" title="Geser untuk pindah | Ketuk untuk Impor Excel">📥</div>
 <script>
 (function(){
 const btn=document.getElementById('floating-importer');
-let inp=document.getElementById('excel-input');
-if(!inp){
-inp=document.createElement('input'); inp.id='excel-input'; inp.type='file'; inp.accept='.xlsx'; inp.style.display='none';
-inp.addEventListener('change',e=>{ const f=e.target.files&&e.target.files[0]; e.target.value=''; if(f&&window.__doImport) window.__doImport(f); });
-document.body.appendChild(inp);
+if(!btn) return;
+let fileInput=document.getElementById('excel-input');
+if(!fileInput){
+fileInput=document.createElement('input'); fileInput.id='excel-input'; fileInput.type='file'; fileInput.accept='.xlsx'; fileInput.style.display='none';
+fileInput.addEventListener('change',e=>{ const f=e.target.files&&e.target.files[0]; e.target.value=''; if(f&&window.__doImport) window.__doImport(f); });
+document.body.appendChild(fileInput);
 }
 const savedPos=localStorage.getItem('bt_pos_v2');
-if(savedPos){ try{ const p=JSON.parse(savedPos); btn.style.left=p.x+'px'; btn.style.top=p.y+'px'; btn.style.right='auto'; btn.style.bottom='auto'; }catch(e){} }
+if(savedPos){ try{ const pos=JSON.parse(savedPos); btn.style.left=pos.x+'px'; btn.style.top=pos.y+'px'; btn.style.right='auto'; btn.style.bottom='auto'; }catch(e){} }
 let isDragging=false,startX,startY,hasMoved=false;
-btn.addEventListener('pointerdown',e=>{ isDragging=true; hasMoved=false; startX=e.clientX-btn.offsetLeft; startY=e.clientY-btn.offsetTop; btn.setPointerCapture(e.pointerId); btn.style.transition='none'; });
-btn.addEventListener('pointermove',e=>{ if(!isDragging) return; hasMoved=true;
-let x=e.clientX-startX, y=e.clientY-startY;
-x=Math.max(0,Math.min(window.innerWidth-60,x)); y=Math.max(0,Math.min(window.innerHeight-60,y));
-btn.style.left=x+'px'; btn.style.top=y+'px'; btn.style.right='auto'; btn.style.bottom='auto'; });
-btn.addEventListener('pointerup',e=>{ if(!isDragging) return; isDragging=false; btn.releasePointerCapture(e.pointerId);
-btn.style.transition='opacity .3s ease, left .2s ease, top .2s ease';
-localStorage.setItem('bt_pos_v2',JSON.stringify({x:btn.offsetLeft,y:btn.offsetTop}));
-if(!hasMoved) inp.click(); });
+btn.addEventListener('pointerdown',e=>{ isDragging=true; startX=e.clientX-btn.offsetLeft; startY=e.clientY-btn.offsetTop; btn.setPointerCapture(e.pointerId); btn.style.transition='none'; hasMoved=false; });
+btn.addEventListener('pointermove',e=>{ if(!isDragging)return; hasMoved=true; let x=e.clientX-startX,y=e.clientY-startY; x=Math.max(0,Math.min(window.innerWidth-60,x)); y=Math.max(0,Math.min(window.innerHeight-60,y)); btn.style.left=x+'px'; btn.style.top=y+'px'; btn.style.right='auto'; btn.style.bottom='auto'; });
+btn.addEventListener('pointerup',e=>{ if(!isDragging)return; isDragging=false; btn.releasePointerCapture(e.pointerId); btn.style.transition='opacity .3s ease, left .2s ease, top .2s ease'; localStorage.setItem('bt_pos_v2',JSON.stringify({x:btn.offsetLeft,y:btn.offsetTop})); if(!hasMoved) fileInput.click(); });
+const checkModal=()=>{ const isOpen=document.querySelector('.modal.show, #modal-pengaturan[style*="block"], .modal-active'); btn.style.display=isOpen?'none':'flex'; };
+setInterval(checkModal,500);
 })();
 </script>
 </body>
